@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%231C1D1F%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-size=%2216%22 fill=%22%23fff%22 text-anchor=%22middle%22%3EJO%3C/text%3E%3C/svg%3E">
+<title>Jautrais Ods</title>
+<meta name="description" content="Jautrais Ods — kafejnīca un restorāns Smiltenes novadā. Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=Figtree:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Jautrais Ods","servesCuisine":["Latviešu","Eiropas"],"priceRange":"€€","telephone":"+37164772610","address":{"@type":"PostalAddress","streetAddress":"“Jautrais Ods”","addressLocality":"Launkalnes pagasts","addressRegion":"Smiltenes novads","addressCountry":"LV"},"areaServed":"Smiltene","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday"],"opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"18:00"}]}
+</script>
+<style>
+/* Layout: no rules or dividers anywhere — structure comes from whitespace and soft tinted panels.
+   Left-aligned upright serif headings; menu = category rail + soft panel. Single light theme by design. */
+:root{
+  --bg:#F4F5F7; --soft:#EAECEF; --soft-2:#E0E3E7; --card:#FFFFFF; --dark:#1E2023; --dark-2:#2A2D31;
+  --ink:#1C1D1F; --muted:#6A6E75; --faint:#A2A6AD;
+  --accent:#55654B; --accent-soft:#E4E8E1;
+  --serif:"Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans:"Figtree", "Helvetica Neue", Arial, sans-serif;
+  --hdr:80px; --r:12px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;font-synthesis-weight:none;background:var(--bg);color:var(--ink);font:15.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1560px;margin:0 auto;padding-inline:clamp(12px,1.4vw,22px)}
+.inner{max-width:1280px;margin:0 auto;padding-inline:clamp(18px,3.4vw,40px)}
+.narrow{max-width:760px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;text-wrap:balance;margin:0;line-height:1.08}
+h1 em,h2 em{font-style:italic}
+.price{font-variant-numeric:tabular-nums lining-nums;white-space:nowrap}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.lead{font-size:18px;color:var(--muted);max-width:52ch;margin:0}
+.ar{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;flex:none;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.ar svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+a:hover .ar{transform:translateX(3px)}
+.btn .ar{margin-right:-12px;margin-left:4px}
+.btn-white .ar{background:var(--ink);color:#fff}
+.btn-ink .ar{background:#fff;color:var(--ink)}
+.tlink .ar{background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.tlink{font-weight:600;font-size:14.5px;display:inline-flex;gap:10px;align-items:center}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 24px;font-weight:600;font-size:14.5px;transition:background .2s,color .2s}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#000}
+.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:var(--bg)}
+.btn-soft{background:var(--soft)}.btn-soft:hover{background:var(--soft-2)}
+.btn-glass{background:rgba(255,255,255,.14);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.btn-glass:hover{background:rgba(255,255,255,.24)}
+
+/* Top bar */
+.topbar{background:var(--dark);color:#E8EAED;font-size:12.5px}
+.topbar .wrap{display:flex;align-items:center;justify-content:center;gap:26px;min-height:36px;flex-wrap:wrap;padding-block:6px}
+.topbar .st{display:inline-flex;align-items:center;gap:8px}
+.topbar .st i{width:7px;height:7px;border-radius:50%;background:#8CC79A;box-shadow:0 0 0 3px rgba(140,199,154,.2)}
+.topbar .st.closed i{background:#E08A70;box-shadow:0 0 0 3px rgba(224,138,112,.2)}
+.topbar a{color:#fff;font-weight:500}
+.topbar .dim{color:#B3B7BD}
+@media (max-width:640px){.topbar .hide-s{display:none}.topbar .wrap{gap:16px}}
+
+/* Header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.hdr .wrap{height:var(--hdr);display:flex;align-items:center;gap:28px}
+.brand{font-family:var(--serif);font-size:24px;letter-spacing:-.01em;white-space:nowrap}
+.nav{display:flex;gap:6px;margin-left:auto}
+.nav a{font-size:14.5px;color:var(--muted);padding:8px 14px;border-radius:8px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);background:var(--soft)}
+.hdr-r{display:flex;align-items:center;gap:16px}
+.go{display:flex;gap:8px}
+.go a{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border-radius:10px;font-size:13px;font-weight:500;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.05);transition:box-shadow .2s}
+.go a:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.go .ic{width:24px;height:24px;border-radius:7px;display:grid;place-items:center}
+.go .ic svg{width:15px;height:15px}
+.go .g .ic,.nlogo.g{background:#fff;box-shadow:inset 0 0 0 1px var(--soft-2)}
+.go .g .ic svg,.nlogo.g svg{height:17px;width:auto}
+.go .w .ic,.nlogo.w{background:#33CCFF}
+.nlogo{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;margin-left:-10px;flex:none}
+.nlogo svg{width:17px;height:17px}
+.go .w .ic svg{width:17px;height:17px}
+.lang{font-size:12.5px;letter-spacing:.04em;color:var(--faint);display:flex;gap:10px}
+.lang b{color:var(--ink);font-weight:600}
+.burger{display:none;width:40px;height:40px;place-items:center;border-radius:10px;background:var(--soft)}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink);box-shadow:0 -5px 0 var(--ink),0 5px 0 var(--ink);transition:transform .3s, box-shadow .3s}
+.burger.x span{transform:rotate(45deg);box-shadow:none}
+.burger.x span::after{content:"";display:block;width:18px;height:1.5px;background:var(--ink);transform:rotate(-90deg)}
+@media (max-width:1120px) and (min-width:901px){.nav a{padding:8px 10px}.go .t{display:none}.go a{padding:0 6px}}
+@media (max-width:900px){.nav,.hdr .lang{display:none}.burger{display:grid}.hdr-r{margin-left:auto;gap:8px}.go a{padding:0 6px;width:36px;justify-content:center}.go .t{display:none}}
+
+/* Mobile menu (popover, blur behind, fade-up items) */
+.mscrim{position:fixed;inset:0;z-index:45;background:rgba(244,245,247,.35);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0);opacity:0;pointer-events:none;transition:opacity .35s,backdrop-filter .35s,-webkit-backdrop-filter .35s}
+.mscrim.on{opacity:1;pointer-events:auto;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mnav{position:absolute;top:calc(100% + 6px);left:12px;right:12px;z-index:55;background:var(--card);border-radius:var(--r);box-shadow:0 24px 60px rgba(30,30,30,.16);padding:12px 12px 16px;display:flex;flex-direction:column;gap:2px;opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top center;pointer-events:none;transition:opacity .3s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.mnav.on{opacity:1;transform:none;pointer-events:auto}
+.mnav a{font-family:var(--serif);font-size:27px;padding:10px 14px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;opacity:0;transform:translateY(14px);filter:blur(4px);transition:opacity .45s,transform .45s cubic-bezier(.2,.8,.2,1),filter .45s,background .2s}
+.mnav a::after{content:"";width:30px;height:30px;border-radius:7px;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231C1D1F' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8h9M8.5 4l4 4-4 4'/%3E%3C/svg%3E") center/14px no-repeat;flex:none}
+.mnav a[aria-current="page"]::after{background-color:var(--card)}
+.mnav a[aria-current="page"]{background:var(--soft)}
+.mnav.on a{opacity:1;transform:none;filter:none}
+.mnav.on a:nth-child(1){transition-delay:.06s}.mnav.on a:nth-child(2){transition-delay:.11s}.mnav.on a:nth-child(3){transition-delay:.16s}.mnav.on a:nth-child(4){transition-delay:.21s}.mnav.on a:nth-child(5){transition-delay:.26s}
+.mfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 14px 0;font-size:13px;color:var(--muted);opacity:0;transform:translateY(14px);transition:opacity .45s .3s,transform .45s .3s}
+.mnav.on .mfoot{opacity:1;transform:none}
+.mlang{display:inline-flex;background:var(--soft);border-radius:9px;padding:3px}
+.mlang button{font-size:12px;font-weight:600;letter-spacing:.08em;padding:6px 14px;border-radius:7px;color:var(--muted)}
+.mlang button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+@media (min-width:901px){.mnav,.mscrim{display:none}}
+
+/* Hero slider */
+.slider{position:relative;border-radius:var(--r);overflow:hidden;height:clamp(500px,46vw,720px);background:#2a2420;color:#fff;isolation:isolate}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;display:flex;align-items:flex-end}
+.slide.on{opacity:1;z-index:1}
+.slide .img{position:absolute;inset:0;z-index:-1;transform:scale(1.06);transition:transform 7s ease-out}
+.slide.on .img{transform:scale(1)}
+.slide .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,16,18,.74) 0%,rgba(14,16,18,.42) 50%,rgba(14,16,18,.1) 100%),linear-gradient(0deg,rgba(14,16,18,.55),rgba(14,16,18,0) 55%)}
+.ph-1{background:radial-gradient(90% 80% at 65% 40%,#a08566 0%,#6e5741 38%,#3a2d23 75%,#231b16 100%)}
+.ph-2{background:radial-gradient(90% 80% at 60% 40%,#b9ab92 0%,#7d7360 40%,#45403a 80%,#2b2825 100%)}
+.ph-3{background:radial-gradient(80% 80% at 60% 50%,#c29a6c 0%,#8a6443 40%,#4a3424 80%,#2a1e16 100%)}
+.ph-4{background:radial-gradient(90% 90% at 40% 30%,#d8d2c6 0%,#b2a998 45%,#7d7465 100%)}
+.grain{position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.phtag{position:absolute;right:20px;top:18px;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.7);background:rgba(0,0,0,.18);border-radius:999px;padding:5px 11px}
+.slide .in{padding:0 clamp(24px,4.5vw,72px) clamp(96px,10vw,120px);max-width:760px}
+.slide .kicker{color:rgba(255,255,255,.75)}
+.slide h1,.slide h2{font-size:clamp(40px,5.4vw,80px);margin:14px 0 18px}
+.slide p{max-width:42ch;margin:0 0 28px;font-size:16.5px;line-height:1.5;color:rgba(255,255,255,.88)}
+.slide .in>*{opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s}
+.slide.on .in>*{opacity:1;transform:none}
+.slide.on .in>*:nth-child(2){transition-delay:.08s}.slide.on .in>*:nth-child(3){transition-delay:.16s}.slide.on .in>*:nth-child(4){transition-delay:.24s}
+.idx{position:absolute;z-index:3;right:clamp(20px,3vw,40px);bottom:clamp(24px,3vw,36px);display:flex;gap:10px}
+.idx button{position:relative;overflow:hidden;text-align:left;color:#fff;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:8px;padding:12px 16px;min-width:150px;font-size:13px;line-height:1.3;transition:background .2s}
+.idx button:hover{background:rgba(255,255,255,.18)}
+.idx b{display:block;font-family:var(--serif);font-weight:400;font-size:15px;opacity:.6}
+.idx button.on b{opacity:1}
+.idx i{position:absolute;left:0;bottom:0;height:2px;width:0;background:#fff}
+.idx button.on i{animation:fill 6s linear forwards}
+.slider:hover .idx button.on i{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+@media (max-width:760px){.idx{left:20px;right:20px;gap:6px}.idx button{min-width:0;flex:1;padding:10px 12px}.idx span{display:none}.slide .in{padding-bottom:104px}}
+
+/* Sections */
+.sec{padding-block:clamp(72px,9vw,128px)}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,3.4vw,44px)}
+.shead h2{font-size:clamp(36px,4vw,56px)}
+.shead p{margin:12px 0 0}
+
+/* Intro */
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+.intro h2{font-size:clamp(32px,3.6vw,50px);line-height:1.14}
+.intro h2 em{color:var(--accent)}
+.facts{display:flex;gap:clamp(24px,4vw,56px);margin-top:28px;flex-wrap:wrap}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:44px;line-height:1}
+.facts span{font-size:13px;color:var(--muted)}
+@media (max-width:900px){.intro{grid-template-columns:1fr}}
+
+/* Menu: rail + panel */
+.menu{display:grid;grid-template-columns:260px 1fr;gap:clamp(20px,3vw,48px);align-items:start}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hdr) + 16px);display:flex;flex-direction:column;gap:2px}
+.rail button,.rail a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;text-align:left;font-family:var(--serif);font-size:21px;color:var(--muted);padding:10px 16px;border-radius:8px;transition:background .2s,color .2s}
+.rail button:hover,.rail a:hover{color:var(--ink)}
+.rail [aria-current="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.rail small{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.rail .search{margin-bottom:12px}
+.search input{width:100%;border:0;background:var(--soft);border-radius:10px;padding:12px 18px;font:inherit;font-size:14px;color:var(--ink)}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:none;background:var(--soft-2)}
+.panel{background:var(--card);border-radius:var(--r);padding:clamp(24px,3.4vw,48px)}
+.panel+.panel{margin-top:16px}
+.panel h3{font-size:clamp(28px,2.6vw,36px);margin-bottom:4px}
+.panel .note{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+.grp{margin-top:30px}
+.grp:first-of-type{margin-top:26px}
+.grp-t{display:block;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--accent);margin-bottom:2px}
+.items{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,64px)}
+.it{display:grid;grid-template-columns:1fr auto;gap:2px 18px;padding:14px 0;align-items:baseline;min-width:0}
+.it .n{font-weight:500;font-size:16px;line-height:1.35}
+.it .d{grid-column:1;font-size:13.5px;color:var(--muted);line-height:1.45}
+.it .p{grid-column:2;grid-row:1;text-align:right;font-weight:600;font-size:15.5px}
+.it .p small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.sig{display:inline-block;font-size:11.5px;font-weight:600;color:#fff;background:var(--accent);border-radius:5px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+.mfine{font-size:13px;color:var(--muted);margin:20px 4px 0}
+.empty{color:var(--muted);padding:20px 0}
+@media (max-width:980px){
+  .menu{grid-template-columns:1fr}
+  .rail{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:6px;top:calc(env(safe-area-inset-top,0px) + var(--hdr));z-index:20;background:var(--bg);padding:8px 0;margin-inline:calc(-1 * clamp(18px,3.4vw,40px));padding-inline:clamp(18px,3.4vw,40px)}
+  .rail::-webkit-scrollbar{display:none}
+  .rail button,.rail a{font-family:var(--sans);font-size:14px;white-space:nowrap;padding:9px 16px;border-radius:8px;background:var(--soft)}
+  .rail [aria-current="true"]{background:var(--ink);color:#fff}
+  .rail [aria-current="true"] small{color:rgba(255,255,255,.6)}
+  .rail .search{display:none}
+  .msearch-m{display:block!important;margin-bottom:12px}
+}
+@media (max-width:680px){.items{grid-template-columns:1fr}}
+.msearch-m{display:none}
+
+/* Signature */
+.sigblock{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(16px,2vw,24px)}
+.sigblock .photo{border-radius:var(--r);min-height:460px}
+.sigblock .txt{background:var(--soft);border-radius:var(--r);padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.sigblock h2{font-size:clamp(34px,3.6vw,52px);margin:14px 0 16px}
+.sigblock .pr{font-family:var(--serif);font-size:40px}
+@media (max-width:900px){.sigblock{grid-template-columns:1fr}.sigblock .photo{min-height:300px}}
+.photo{position:relative;overflow:hidden;background:var(--soft)}
+.photo .ph{position:absolute;inset:0}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.slide .img{background-size:cover;background-position:center}
+.strip3{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.strip3 .photo{border-radius:10px;height:clamp(240px,26vw,400px)}
+@media (max-width:760px){.strip3{grid-template-columns:1fr 1fr}.strip3 .photo:first-child{grid-column:1/-1}.strip3 .photo{height:200px}}
+.photo .lbl{position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.04em;color:rgba(255,255,255,.8)}
+
+/* Amenities */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tile{background:var(--card);border-radius:10px;padding:26px 26px 24px}
+.tile h3{font-size:24px;margin-bottom:6px}
+.tile p{margin:0;font-size:14px;color:var(--muted)}
+@media (max-width:860px){.tiles{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+
+/* Blog cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:10px}
+.card .photo{aspect-ratio:4/3;border-radius:10px;margin-bottom:8px}
+.card h3{font-size:24px;line-height:1.15;transition:color .2s}
+.card p{margin:0;color:var(--muted);font-size:14.5px}
+.card .meta{font-size:12.5px;color:var(--muted)}
+.card .meta b{color:var(--accent);font-weight:600}
+.card:hover h3{color:var(--accent)}
+
+/* Visit panel */
+.visit{background:var(--dark);color:#ECEDEF;border-radius:var(--r);padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px)}
+.visit h2{font-size:clamp(36px,4vw,56px);margin-bottom:16px}
+.visit p{color:#B3B7BD;margin:0 0 6px}
+.visit .big{font-family:var(--serif);font-size:24px;color:#fff;margin:22px 0 4px}
+.visit .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.hours{display:grid;gap:4px;font-variant-numeric:tabular-nums}
+.hours div{display:flex;justify-content:space-between;padding:10px 16px;border-radius:7px;font-size:15px;color:#B3B7BD}
+.hours .today{background:var(--dark-2);color:#fff;font-weight:500}
+.hours.light div{color:var(--muted)}
+.hours.light .today{background:var(--soft);color:var(--ink)}
+@media (max-width:860px){.visit{grid-template-columns:1fr}}
+
+/* Inner pages */
+.phead{padding-block:clamp(48px,6vw,88px) clamp(24px,3vw,40px)}
+.phead h1{font-size:clamp(46px,6vw,84px);margin:14px 0 18px}
+.banner{border-radius:var(--r);height:clamp(260px,32vw,520px)}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:12px}
+.gallery .photo{border-radius:10px}
+.gallery .photo:first-child{grid-row:1/3}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 150px 150px}.gallery .photo:first-child{grid-column:1/3;grid-row:auto}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.two h2{font-size:clamp(32px,3.4vw,46px)}
+.two p{margin:0 0 16px;color:var(--muted)}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.prose{font-size:17.5px;line-height:1.75}
+.prose h2{font-size:30px;margin:40px 0 12px}
+.prose p{margin:0 0 18px}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--faint)}
+
+/* Contacts */
+.cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(16px,2vw,24px)}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr}}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--soft)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;left:58%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.map .pin b{background:var(--ink);color:#fff;font-weight:500;font-size:13px;padding:8px 14px;border-radius:8px;white-space:nowrap}
+.map .pin i{width:10px;height:10px;background:var(--ink);transform:rotate(45deg);margin-top:-6px}
+.map .btns{position:absolute;left:18px;bottom:18px;display:flex;gap:8px;flex-wrap:wrap}
+.cbox{background:var(--card);border-radius:var(--r);padding:clamp(24px,3vw,40px)}
+.cbox h2{font-size:28px;margin-bottom:20px}
+.kv{display:grid;gap:18px}
+.kv div span{display:block;font-size:13.5px;color:var(--muted);margin-bottom:2px}
+.kv div b{font-family:var(--serif);font-weight:400;font-size:22px}
+.copy{font-size:12px;background:var(--soft);border-radius:7px;padding:4px 12px;margin-left:10px;vertical-align:4px}
+.copy:hover{background:var(--soft-2)}
+.faq{display:grid;gap:8px}
+.faq details{background:var(--card);border-radius:10px;padding:18px 22px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:500;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--muted);font-size:20px;line-height:1.1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--muted);margin:8px 0 0}
+
+/* Footer */
+footer{padding-block:clamp(48px,6vw,80px) calc(32px + env(safe-area-inset-bottom,0px))}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+@media (max-width:820px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}}
+footer h4{font-size:14px;color:var(--muted);font-weight:500;margin:0 0 14px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:14.5px}
+footer ul a:hover{color:var(--accent)}
+footer .fp{color:var(--muted);font-size:14px;max-width:34ch;margin:14px 0 0}
+.fbot{margin-top:48px;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;background:var(--ink);color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;z-index:95;transition:.3s;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+
+</head>
+<body>
+<div class="topbar" role="note" aria-label="Šodien"><div class="wrap" id="topbar"></div></div>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#sakums">Jautrais Ods</a>
+    <nav class="nav" aria-label="Galvenā navigācija">
+      <a href="#edienkarte" data-nav="edienkarte">Ēdienkarte</a>
+      <a href="#par-mums" data-nav="par-mums">Par mums</a>
+      <a href="#blogs" data-nav="blogs">Blogs</a>
+      <a href="#kontakti" data-nav="kontakti">Kontakti</a>
+    </nav>
+    <div class="hdr-r">
+      <div class="go" aria-label="Navigācija līdz kafejnīcai">
+        <a class="g" href="https://www.google.com/maps/search/?api=1&query=Jautrais+Ods+Launkalnes+pagasts" target="_blank" rel="noopener" aria-label="Atvērt Google Maps"><span class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.3 132.3"><path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/><path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/><path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-3.8 8.1-6.3 13.6-6.3"/><path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/><path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.4 14.5 6.8 23.1 12.8 23.1s3.4-8.7 12.8-23.2"/></svg></span><span class="t">Google Maps</span></a>
+        <a class="w" href="https://waze.com/ul?q=Jautrais%20Ods%20Smiltene&navigate=yes" target="_blank" rel="noopener" aria-label="Atvērt Waze"><span class="ic"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#fff" d="M230.1 434.2c17.6 0 35.2.8 52.7-.4c16-.8 32.8-2.3 48.5-6.2C455.6 397.1 522 260 467.6 144c-32.8-70-89.1-109.8-166-118c-59-6.2-111.7 11.3-156.3 51.2c-43.7 39.5-66.4 88.7-68 147.7c-.4 13.7 0 27.7 0 41.4c-.3 29.6-17.1 52.7-45.7 61.6c-.4 0-1.2.8-1.6.8c11 28.9 55.5 71.5 83.2 82c34.9-47.6 105.2-30.8 116.9 23.5"/><path d="M229.3 460.4c-4.3 19.5-14.8 34-32 43c-21.9 11.3-44.2 11-64.9-2.3c-21.5-13.7-30.9-34.4-29.3-59.8c.4-4.3-.8-5.9-4.3-7.8c-37.9-19.9-68-47.7-88.7-85.2c-3.9-7.4-7-15.2-9-23.5c-2.7-11.3 1.6-16.8 13.3-18c14.1-1.6 26.6-7 32.8-20.3c2.7-5.9 4.3-12.9 4.3-19.5c.8-16.8 0-33.6.8-50.4c4.3-64.9 31.2-118.7 80.5-161C178.1 16.6 231.2-1.7 291 .2c104.3 3.9 193.8 77.4 214.9 180.1c19.1 93-9.7 170.7-83.6 231.3c-4.3 3.5-9 7-14.1 10.2c-2.7 2-3.5 3.5-2.3 6.6c9.7 29.7-3.9 62.5-31.2 76.6c-37.1 18.4-80.1-.4-91.4-40.2c-.4-1.6-2.3-3.5-3.5-3.5c-16.5-1.3-33.3-.9-50.5-.9m.8-26.2c17.6 0 35.2.8 52.7-.4c16-.8 32.8-2.3 48.5-6.2C455.6 397.1 522 260 467.6 144c-32.8-70-89.1-109.8-166-118c-59-6.2-111.7 11.3-156.3 51.2c-43.7 39.5-66.4 88.7-68 147.7c-.4 13.7 0 27.7 0 41.4c-.3 29.6-17.1 52.7-45.7 61.6c-.4 0-1.2.8-1.6.8c11 28.9 55.5 71.5 83.2 82c34.9-47.6 105.2-30.8 116.9 23.5m82.4-101.9c-46.1-2.3-76.6-20.7-96.1-57.4c-4.7-9-.4-18 8.6-19.9c5.5-1.2 10.5 2.7 14.5 9c5.1 7.8 10.2 15.6 16.8 21.9c36.7 34.7 96.9 23.8 120-21.1c2.7-5.5 6.2-9.7 12.9-9.7c9.7.4 15.2 10.2 11 19.1c-12.1 24.6-31.2 42.6-57 51.2c-11.5 3.7-23.3 5.3-30.7 6.9m-81.6-128.2c-14.1 0-25.4-11.3-25.4-25.4s11.3-25.4 25.4-25.4s25.4 11.3 25.4 25.4c0 13.7-11.4 25.4-25.4 25.4m178.9-25.8c0 14.1-11.3 25.4-25 25.8c-14.1 0-25.4-11-25.4-25.4c0-14.1 11-25.4 25-25.8c13.7 0 25 11.4 25.4 25.4"/></svg></span><span class="t">Waze</span></a>
+      </div>
+      <span class="lang">EN <b>LV</b></span>
+      <button class="burger" id="burger" aria-label="Atvērt izvēlni" aria-expanded="false" aria-controls="mnav"><span></span></button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobilā izvēlne">
+    <a href="#sakums" data-nav="sakums">Sākums</a><a href="#edienkarte" data-nav="edienkarte">Ēdienkarte</a><a href="#par-mums" data-nav="par-mums">Par mums</a><a href="#blogs" data-nav="blogs">Blogs</a><a href="#kontakti" data-nav="kontakti">Kontakti</a>
+    <div class="mfoot"><span>+371 64772610</span><div class="mlang" role="group" aria-label="Valoda"><button data-lang="lv" aria-pressed="true">LV</button><button data-lang="en" aria-pressed="false">EN</button></div></div>
+  </nav>
+</header>
+<div class="mscrim" id="mscrim"></div>
+
+<main id="app"></main>
+
+<footer class="inner">
+  <div class="fgrid">
+    <div><a class="brand" href="#sakums">Jautrais Ods</a><p class="fp">Kafejnīca un restorāns Smiltenes novadā, pie Vidzemes šosejas.</p></div>
+    <div><h4>Lapas</h4><ul><li><a href="#edienkarte">Ēdienkarte</a></li><li><a href="#par-mums">Par mums</a></li><li><a href="#blogs">Blogs</a></li><li><a href="#kontakti">Kontakti</a></li></ul></div>
+    <div><h4>Kontakti</h4><ul><li>+371 64772610</li><li>“Jautrais Ods”, Launkalnes pag., Smiltenes nov.</li></ul></div>
+    <div><h4>Sekot</h4><ul><li><a href="https://www.facebook.com/search/top?q=jautrais%20ods" target="_blank" rel="noopener">Facebook</a></li><li><a href="#kontakti">Instagram</a></li><li><a href="#kontakti">Privātuma politika</a></li></ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Jautrais Ods</span><span>Kafejnīca Smiltenes novadā</span></div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ---------- Content (Sanity in production) ---------- */
+const SLIDES=[
+ {img:"hero-fasade",short:"Kafejnīca",kicker:"Kafejnīca Smiltenes novadā",title:"Mājīgas pusdienas <em>pie Smiltenes</em>",text:"Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas. Gaidām gan ceļotājus, gan vietējos.",cta:["Skatīt ēdienkarti","#edienkarte"]},
+ {img:"hero-pried",short:"Priežu ielokā",kicker:"",title:"Pietura <em>priežu ielokā</em>",text:"Ērta vieta, kur apstāties ceļā pa Vidzemes šoseju. Plaša autostāvvieta un mierīgs dārzs.",cta:["Kā mūs atrast","#kontakti"]},
+ {img:"hero-terase",short:"Terase un dārzs",kicker:"Siltajā sezonā",title:"Terase, šūpoles <em>un EV uzlāde</em>",text:"Kamēr jūs pusdienojat, bērni šūpojas un auto lādējas.",cta:["Par kafejnīcu","#par-mums"]}
+];
+const MENU=[
+ {id:"uzkodas",t:"Siltās uzkodas",items:[
+  ["Zemnieku brokastis","Cepti kartupeļi, cūkgaļa, ola, siers, kečups",[8.5]],
+  ["Siltie pērļu grūbu salāti ar lasi un brokoļiem","",[12.5]],
+  ["Siltie vistas gaļas un šampinjonu salāti ar sieru","",[9.5]],
+  ["Siltie dārzeņu salāti ar Fetaki sieru","",[9.5]],
+  ["Dzeltenās pākšu pupiņas ar šampinjonu mērci","",[7.5]],
+  ["Brokoļi ar siera mērci","",[7.5]]]},
+ {id:"zupas",t:"Zupas",note:"Lielā vai mazā porcija.",items:[
+  ["Frikadeļu zupa","",[5,3.5]],
+  ["Pikantā liellopu gaļas zupa","",[8.5,5]],
+  ["Šampinjonu zupa ar grauzdiņiem","Neblendēta, ar saldo krējumu",[8,5]],
+  ["Ķirbju krēmzupa ar Fetaki sieru","",[8.5,5]]]},
+ {id:"salati",t:"Salāti",items:[
+  {g:"Ar jūras veltēm"},
+  ["Garneļu salāti ar majonēzi","Ola, svaigs gurķis",[7]],
+  ["Garneļu salāti ar Fetaki sieru un grauzdiņiem","Svaigs gurķis, citronu sula, baltmaizes grauzdiņi, lapu salāti",[7.5]],
+  {g:"Ar gaļu"},
+  ["Kraukšķīgie vistas salāti","Lapu salāti, tomāti, ola, pikanta majonēze, grauzdiņi",[8.5]],
+  ["Vistas gaļas salāti ar vīnogām un pistācijām","Svaigs gurķis, majonēze, lapu salāti",[6.5]],
+  ["Mēlīšu salāti","Marinēts gurķis, sīpoli, majonēze, kečups",[6.5]],
+  ["Siera salāti ar vistas gaļu un marinētiem šampinjoniem","Zirnīši, majonēze",[5.5]],
+  ["Vistas gaļas salāti","Marinēts gurķis, tomāti, sīpoli, majonēze",[5]],
+  {g:"Veģetārie"},
+  ["Salāti ar Fetaki sieru","Paprika, tomāti, citronu sula, lapu salāti",[6.5]]]},
+ {id:"otrie",t:"Otrie ēdieni",note:"Cenas bez piedevām, dārzeņu salātiem un mērcēm. Piedevas izvēlieties zemāk.",items:[
+  {g:"Cūkgaļa"},
+  ["Cūkgaļas karbonāde “Jautrā Oda” gaumē","Žāvēts šķiņķis, tomāti, šampinjoni, siers, maize",[7.5],1],
+  ["Cūkgaļas karbonāde","",[5.5,3.5]],
+  ["Cūkgaļas karbonāde ar sieru un ķiplokiem","",[6.5,4]],
+  ["Ceptas cūkgaļas šķēles ar ceptiem sīpoliem","",[8.5,5.5]],
+  ["Marinētas cūkas filejas šķēlītes","",[8,4.5]],
+  ["Cūkgaļas kotletes","",[5,3]],
+  {g:"Vista"},
+  ["Vistas filejas karbonāde","",[6,3.5]],
+  ["Vistas fileja ar kaltētiem tomātiem un Fetaki sieru","",[7.5]],
+  ["Vistas gaļas gabaliņi siera mērcē","",[7,4]],
+  ["Marinētas vistas filejas šķēlītes","",[7,4]],
+  ["Vistas filejas šķēlītes sezama sēkliņās","",[8,5]],
+  {g:"Liellops"},
+  ["Sautētas liellopa gaļas strēmelītes mērcē","",[8.5,6]],
+  {g:"Zivis un jūras veltes"},
+  ["Cepta laša fileja ar ceptiem dārzeņiem","",[18]],
+  ["Garneļu sautējums ar šampinjoniem un rīsiem","",[17]],
+  ["Cepta zandarta fileja ar sviesta mērcīti","",[14]],
+  ["Laša kotletītes","",[8,6]],
+  {g:"Pasta"},
+  ["Spageti ar vistas gabaliņiem citronu mērcē","",[10.5]],
+  ["Spageti ar maltās gaļas mērci","",[9.5]]]},
+ {id:"piedevas",t:"Piedevas un mērces",items:[
+  {g:"Piedevas"},
+  ["Vārīti kartupeļi","",[2,1]],
+  ["Vārīti–cepti kartupeļi","",[3,1.5]],
+  ["Frī kartupeļi","",[4,2]],
+  ["Kartupeļu plācenīši","",[4.5,3]],
+  ["Sviestā cepti dārzeņi","",[4.5,3]],
+  ["Pērļu grūbas","",[2]],
+  ["Rīsi","",[2]],
+  ["Svaigie dārzeņu salāti","Kāposti un burkāni",[2,1]],
+  {g:"Siltās mērces"},
+  ["Krējuma mērce","",[2]],
+  ["Šampinjonu mērce","",[3.5]],
+  {g:"Aukstās mērces"},
+  ["Ķiploku mērce","",[2]],
+  ["Majonēze","",[1.5]],
+  ["Kečups","",[1.5]]]},
+ {id:"pankukas",t:"Pankūkas un omletes",items:[
+  {g:"Pankūkas"},
+  ["Kartupeļu pankūciņas ar mazsālītu lasi un ķiploku mērci","",[16]],
+  ["Plānās pankūkas ar sieru un šķiņķi","",[6]],
+  ["Plānās pankūkas ar vistas gaļu, tomātiem un Fetaki sieru","",[6]],
+  ["Plānās pankūkas ar biezpienu","",[6]],
+  ["Plānās pankūkas ar banāniem un kļavu sīrupu","",[6]],
+  ["Plānās pankūkas ar dzērveņu ievārījumu vai zemeņu mērci","",[4]],
+  {g:"Omletes"},
+  ["Omlete ar dārzeņiem un sieru","Tomāti, paprika, brokoļi",[4]],
+  ["Omlete ar žāvētu šķiņķi un sieru","",[3.5]],
+  {g:"Karstmaizes un grauzdiņi"},
+  ["Ķiploku grauzdiņi","",[3]],
+  ["Karstmaize ar sieru un žāvētu šķiņķi","",[2.5]],
+  ["Karstmaize ar tomātiem un sieru","",[2.5]]]},
+ {id:"saldie",t:"Saldie ēdieni",items:[
+  {g:"Deserti"},
+  ["Cepti kanēļbanāni ar saldējumu","",[7]],
+  ["Biezpiena deserts ar zemeņu mērci","",[6.5]],
+  ["Zefīra krēms ar liķieri un zemeņu mērci","",[6]],
+  ["Biezpienmaizīte","",[2.5]],
+  {g:"Saldējums un kokteiļi"},
+  ["Saldējums ar zemeņu mērci","",[4]],
+  ["Saldējums ar šokolādi un riekstiem","",[4]],
+  ["Saldējuma kokteilis ar banānu","",[4]],
+  ["Saldējuma kokteilis ar plūmju sulu","",[4]]]}
+];
+const POSTS=[
+ {slug:"raksts-kur-paest-smiltene",cat:"Ceļvedis",date:"28. septembris",img:"fasade-ziedi",title:"Kur paēst Smiltenē un apkārtnē",ex:"Kafejnīcas, restorāni un pusdienu vietas, ko vērts zināt, braucot cauri Smiltenes novadam."},
+ {slug:"raksts-smiltenes-novads",cat:"Apkārtne",date:"14. septembris",img:"rati",title:"Ko apskatīt Smiltenes novadā vienā dienā",ex:"Takas, ezeri un skatu vietas, kas labi sader ar pusdienu pieturu pie mums."},
+ {slug:"raksts-karbonade",cat:"Virtuve",date:"2. septembris",img:"kafejnica-tuvu",title:"Karbonāde “Jautrā Oda” gaumē",ex:"Šķiņķis, tomāti, šampinjoni un siers. Stāsts par ēdienu, ko pasūta visbiežāk."}
+];
+const H={0:[11,18],1:null,2:[10,19],3:[9,19],4:[9,19],5:[10,20],6:[10,20]};
+const DAYN=["Svētdiena","Pirmdiena","Otrdiena","Trešdiena","Ceturtdiena","Piektdiena","Sestdiena"];
+const MAPS="https://www.google.com/maps/search/?api=1&query=Jautrais+Ods+Launkalnes+pagasts";
+const WAZE="https://waze.com/ul?q=Jautrais%20Ods%20Smiltene&navigate=yes";
+
+/* ---------- Helpers ---------- */
+const $=s=>document.querySelector(s);
+const NL={g:`<span class="nlogo g"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.3 132.3"><path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/><path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/><path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-3.8 8.1-6.3 13.6-6.3"/><path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/><path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.4 14.5 6.8 23.1 12.8 23.1s3.4-8.7 12.8-23.2"/></svg></span>`,w:`<span class="nlogo w"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#fff" d="M230.1 434.2c17.6 0 35.2.8 52.7-.4c16-.8 32.8-2.3 48.5-6.2C455.6 397.1 522 260 467.6 144c-32.8-70-89.1-109.8-166-118c-59-6.2-111.7 11.3-156.3 51.2c-43.7 39.5-66.4 88.7-68 147.7c-.4 13.7 0 27.7 0 41.4c-.3 29.6-17.1 52.7-45.7 61.6c-.4 0-1.2.8-1.6.8c11 28.9 55.5 71.5 83.2 82c34.9-47.6 105.2-30.8 116.9 23.5"/><path d="M229.3 460.4c-4.3 19.5-14.8 34-32 43c-21.9 11.3-44.2 11-64.9-2.3c-21.5-13.7-30.9-34.4-29.3-59.8c.4-4.3-.8-5.9-4.3-7.8c-37.9-19.9-68-47.7-88.7-85.2c-3.9-7.4-7-15.2-9-23.5c-2.7-11.3 1.6-16.8 13.3-18c14.1-1.6 26.6-7 32.8-20.3c2.7-5.9 4.3-12.9 4.3-19.5c.8-16.8 0-33.6.8-50.4c4.3-64.9 31.2-118.7 80.5-161C178.1 16.6 231.2-1.7 291 .2c104.3 3.9 193.8 77.4 214.9 180.1c19.1 93-9.7 170.7-83.6 231.3c-4.3 3.5-9 7-14.1 10.2c-2.7 2-3.5 3.5-2.3 6.6c9.7 29.7-3.9 62.5-31.2 76.6c-37.1 18.4-80.1-.4-91.4-40.2c-.4-1.6-2.3-3.5-3.5-3.5c-16.5-1.3-33.3-.9-50.5-.9m.8-26.2c17.6 0 35.2.8 52.7-.4c16-.8 32.8-2.3 48.5-6.2C455.6 397.1 522 260 467.6 144c-32.8-70-89.1-109.8-166-118c-59-6.2-111.7 11.3-156.3 51.2c-43.7 39.5-66.4 88.7-68 147.7c-.4 13.7 0 27.7 0 41.4c-.3 29.6-17.1 52.7-45.7 61.6c-.4 0-1.2.8-1.6.8c11 28.9 55.5 71.5 83.2 82c34.9-47.6 105.2-30.8 116.9 23.5m82.4-101.9c-46.1-2.3-76.6-20.7-96.1-57.4c-4.7-9-.4-18 8.6-19.9c5.5-1.2 10.5 2.7 14.5 9c5.1 7.8 10.2 15.6 16.8 21.9c36.7 34.7 96.9 23.8 120-21.1c2.7-5.5 6.2-9.7 12.9-9.7c9.7.4 15.2 10.2 11 19.1c-12.1 24.6-31.2 42.6-57 51.2c-11.5 3.7-23.3 5.3-30.7 6.9m-81.6-128.2c-14.1 0-25.4-11.3-25.4-25.4s11.3-25.4 25.4-25.4s25.4 11.3 25.4 25.4c0 13.7-11.4 25.4-25.4 25.4m178.9-25.8c0 14.1-11.3 25.4-25 25.8c-14.1 0-25.4-11-25.4-25.4c0-14.1 11-25.4 25-25.8c13.7 0 25 11.4 25.4 25.4"/></svg></span>`};
+const ARR=`<span class="ar" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8h9M8.5 4l4 4-4 4"/></svg></span>`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const eur=n=>n.toFixed(2).replace(".",",")+" €";
+const pic=(name,alt,cl="")=>`<div class="photo ${cl}"><img src="img/${name}.webp" alt="${alt}" loading="lazy" decoding="async"></div>`;
+const ph=(cls,label,cl="")=>`<div class="photo ${cl}"><div class="ph ${cls}"></div><div class="grain"></div>${label?`<span class="lbl">${label}</span>`:""}</div>`;
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+const countOf=c=>c.items.filter(Array.isArray).length;
+function rigaNow(){ const p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Riga",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()); const g=t=>p.find(x=>x.type===t).value; return {wd:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g("weekday")],h:+g("hour")+ +g("minute")/60}; }
+function openState(){ const {wd,h}=rigaNow(),t=H[wd];
+  if(t&&h>=t[0]&&h<t[1]) return {open:true,txt:`Šobrīd atvērts · līdz ${t[1]}:00`};
+  if(t&&h<t[0]) return {open:false,txt:`Šobrīd slēgts · atveram ${t[0]}:00`};
+  let d=wd,s=0; do{d=(d+1)%7;s++;}while(!H[d]); return {open:false,txt:`Šobrīd slēgts · atveram ${s===1?"rīt":DAYN[d].toLowerCase()} ${H[d][0]}:00`}; }
+const hrs=d=>H[d]?`${H[d][0]}:00–${H[d][1]}:00`:"Slēgts";
+function hoursList(cls=""){ const {wd}=rigaNow(); return `<div class="hours ${cls}">${[1,2,3,4,5,6,0].map(d=>`<div class="${d===wd?"today":""}"><span>${DAYN[d]}${d===wd?" · šodien":""}</span><span>${hrs(d)}</span></div>`).join("")}</div>`; }
+
+/* ---------- Menu rendering ---------- */
+function itemHTML(i){ const [n,d,p,sig]=i; return `<div class="it"><div class="n">${n}${sig?`<span class="sig">Firmas ēdiens</span>`:""}</div>${d?`<div class="d">${d}</div>`:""}<div class="p price">${eur(p[0])}${p.length>1?`<small>mazā ${eur(p[1])}</small>`:""}</div></div>`; }
+function catPanel(c,q=""){
+  let html="",chunk="",g=null,n=0;
+  const flush=()=>{ if(chunk){ html+=`<div class="grp">${g?`<span class="grp-t">${g}</span>`:""}<div class="items">${chunk}</div></div>`; chunk=""; } };
+  c.items.forEach(i=>{ if(!Array.isArray(i)){ flush(); g=i.g; return; } if(q&&!norm(i[0]+" "+i[1]).includes(q)) return; chunk+=itemHTML(i); n++; });
+  flush();
+  return n?`<section class="panel" id="cat-${c.id}"><h3>${c.t}</h3>${c.note?`<p class="note">${c.note}</p>`:""}${html}</section>`:"";
+}
+
+/* ---------- Pages ---------- */
+let homeCat="uzkodas";
+function pageHome(){ return `
+  <section class="wrap"><div class="slider" id="slider" aria-roledescription="carousel" aria-label="Baneri">
+    ${SLIDES.map((s,i)=>`<div class="slide${i?"":" on"}" aria-hidden="${!!i}"><div class="img" style="background-image:url(img/${s.img}.webp)" role="img" aria-label="${s.short}"></div>
+      <div class="in">${i?`<h2>${s.title}</h2>`:`<h1>${s.title}</h1>`}<p>${s.text}</p><a class="btn btn-white" href="${s.cta[1]}">${s.cta[0]} ${ARR}</a></div></div>`).join("")}
+    <div class="idx">${SLIDES.map((s,i)=>`<button class="${i?"":"on"}" data-slide="${i}" aria-label="Baneris ${i+1}: ${s.short}"><b>0${i+1}</b><span>${s.short}</span><i></i></button>`).join("")}</div>
+  </div></section>
+
+  <section class="sec inner"><div class="intro">
+    <div><h2>Neliela kafejnīca pie Smiltenes, kur paēst <em>kā mājās</em> un nekur nesteigties.</h2></div>
+    <div><p class="lead">Divos stāvos: kamīnzāle lejā, mīkstas mēbeles augšā. Ēdienkartē ir latviešu klasika, un daudziem ēdieniem ir arī mazā porcija.</p>
+      <div class="facts"><div><b>70+</b><span>ēdieni ēdienkartē</span></div><div><b>2</b><span>stāvi viesiem</span></div><div><b>6</b><span>dienas nedēļā</span></div></div></div>
+  </div></section>
+
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="strip3">${pic("kafejnica-sans","Kafejnīca Jautrais Ods no sāniem")}${pic("lapene-sans","Lapene un terase")}${pic("darzs-taka","Dārzs un celiņš aiz kafejnīcas")}</div></section>
+
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">
+    <div class="shead"><div><h2>Ēdienkarte</h2></div><a class="tlink" href="#edienkarte">Visa ēdienkarte ${ARR}</a></div>
+    <div class="menu">
+      <nav class="rail" aria-label="Kategorijas">${MENU.map(c=>`<button data-hcat="${c.id}" aria-current="${c.id===homeCat}">${c.t}<small>${countOf(c)}</small></button>`).join("")}</nav>
+      <div id="hPanel"></div>
+    </div>
+  </section>
+
+  <section class="inner"><div class="sigblock">
+    ${ph("ph-3","Foto: karbonāde “Jautrā Oda” gaumē")}
+    <div class="txt"><div><h2>Cūkgaļas karbonāde “Jautrā Oda” gaumē</h2><p class="lead">Sulīga karbonāde ar žāvētu šķiņķi, tomātiem, šampinjoniem un kausētu sieru, pasniegta ar maizi.</p></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><span class="pr price">7,50 €</span><a class="btn btn-ink" href="#edienkarte-otrie">Otrie ēdieni ${ARR}</a></div></div>
+  </div></section>
+
+  <section class="sec inner">
+    <div class="shead"><div><h2>Ērta pietura ceļā</h2></div></div>
+    <div class="tiles">
+      <div class="tile"><h3>Kamīnzāle</h3><p>Pirmajā stāvā, ar kamīnu rudens un ziemas dienās.</p></div>
+      <div class="tile"><h3>Otrais stāvs</h3><p>Mīkstas mēbeles un klusāka vide sarunām.</p></div>
+      <div class="tile"><h3>Terase</h3><p>Siltajā sezonā galdi ārā.</p></div>
+      <div class="tile"><h3>Šūpoles bērniem</h3><p>Pie kafejnīcas, kamēr pieaugušie pusdieno.</p></div>
+      <div class="tile"><h3>Elektroauto uzlāde</h3><p>Uzlādes stacija turpat pie kafejnīcas.</p></div>
+      <div class="tile"><h3>Mazās porcijas</h3><p>Zupām un daudziem otrajiem ēdieniem.</p></div>
+    </div>
+  </section>
+
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">
+    <div class="shead"><div><h2>Stāsti un padomi</h2></div><a class="tlink" href="#blogs">Visi raksti ${ARR}</a></div>
+    ${cards(POSTS)}
+  </section>
+  ${visit()}`; }
+function cards(list){ return `<div class="cards">${list.map(p=>`<a class="card" href="#${p.slug}">${pic(p.img,p.title)}<div class="meta"><b>${p.cat}</b> · ${p.date}</div><h3>${p.title}</h3><p>${p.ex}</p></a>`).join("")}</div>`; }
+function visit(){ return `<section class="inner" style="padding-bottom:clamp(40px,5vw,64px)"><div class="visit">
+  <div><h2>Brauc ciemos</h2><p>“Jautrais Ods”, Launkalnes pagasts, Smiltenes novads. Pie Vidzemes šosejas.</p>
+   <p class="big">+371 64772610</p><p>Galdiņu rezervācijas pa tālruni</p>
+   <div class="btns"><a class="btn btn-white" href="${MAPS}" target="_blank" rel="noopener">${NL.g}Google Maps</a><a class="btn btn-white" href="${WAZE}" target="_blank" rel="noopener">${NL.w}Waze</a></div></div>
+  <div>${hoursList()}</div></div></section>`; }
+
+let mQuery="";
+function pageMenu(){ return `
+  <section class="phead inner"><h1>Ēdienkarte</h1><p class="lead">Latviešu virtuve katru dienu. Daudziem ēdieniem ir arī mazā porcija. Par alergēniem jautājiet oficiantei.</p></section>
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="menu">
+    <nav class="rail" aria-label="Kategorijas"><label class="search"><span class="sr">Meklēt</span><input id="mq" type="search" placeholder="Meklēt ēdienu…" autocomplete="off" value="${esc(mQuery)}"></label>
+      ${MENU.map((c,i)=>`<a href="#edienkarte-${c.id}" data-tab="${c.id}" aria-current="${i===0}">${c.t}<small>${countOf(c)}</small></a>`).join("")}</nav>
+    <div><label class="search msearch-m"><span class="sr">Meklēt</span><input id="mq2" type="search" placeholder="Meklēt ēdienu…" autocomplete="off"></label><div id="mBody"></div><p class="mfine">Cenas eiro ar PVN.</p></div>
+  </div></section>`; }
+function renderMenu(){ const q=norm(mQuery.trim()); const h=MENU.map(c=>catPanel(c,q)).join(""); $("#mBody").innerHTML=h||`<div class="panel"><p class="empty">Nekas neatbilst “${esc(mQuery)}”. Pamēģiniet, piemēram, “vista” vai “zupa”.</p></div>`; }
+
+function pageAbout(){ return `
+  <section class="phead inner"><h1>Kafejnīca ar mājas sajūtu</h1><p class="lead">Neliela, mājīga kafejnīca Smiltenes novadā, Launkalnes pagastā, tieši pie Vidzemes šosejas.</p></section>
+  <section class="wrap">${pic("darzs-taka","Kafejnīcas dārzs","banner")}</section>
+  <section class="sec inner"><div class="two">
+    <h2>Gatavojam to, ko paši labprāt ēdam</h2>
+    <div><p>Zupas, karbonādes, pankūkas un svaigi salāti. Ēdienkartē ir vairāk nekā 70 ēdienu, un daudziem ir arī mazā porcija, kas der bērniem vai vieglām pusdienām.</p>
+     <p>Kafejnīcai ir divi stāvi: kamīnzāle pirmajā un mīkstas mēbeles otrajā. Siltajā sezonā strādā terase, bērniem ir šūpoles, un pie kafejnīcas var uzlādēt elektroauto.</p>
+     <a class="tlink" href="#edienkarte">Skatīt ēdienkarti ${ARR}</a></div>
+  </div></section>
+  <section class="inner"><div class="gallery">${pic("kafejnica-tuvu","Kafejnīca Jautrais Ods")}${pic("ieeja","Ieeja kafejnīcā")}${pic("lapene-sans","Terase")}${pic("klets","Vecā klēts pie autostāvvietas")}${pic("rati","Vecie rati pie ceļa")}</div></section>
+  <section class="sec inner"><div class="tiles">
+    <div class="tile"><h3>Kamīnzāle</h3><p>Pirmajā stāvā.</p></div><div class="tile"><h3>Otrais stāvs</h3><p>Klusākai sarunai.</p></div><div class="tile"><h3>Terase</h3><p>Siltajā sezonā.</p></div>
+    <div class="tile"><h3>Šūpoles</h3><p>Bērniem.</p></div><div class="tile"><h3>EV uzlāde</h3><p>Pie kafejnīcas.</p></div><div class="tile"><h3>Mazās porcijas</h3><p>Zupām un otrajiem.</p></div>
+  </div></section>
+  ${visit()}`; }
+function pageBlog(){ return `<section class="phead inner"><h1>Stāsti un padomi</h1><p class="lead">Receptes, ceļveži un idejas, ko darīt Smiltenē un tās apkārtnē.</p></section>
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">${cards(POSTS)}</section>`; }
+function pageArticle(p){ return `<section class="phead narrow"><h1>${p.title}</h1><p class="lead">${p.ex}</p></section>
+  <section class="wrap">${pic(p.img,p.title,"banner")}</section>
+  <article class="narrow prose sec">
+   <p>Šis ir raksta paraugs, lai redzētu, kā izskatīsies bloga lapa. Saturu rakstīs un rediģēs Sanity CMS. Katram rakstam būs savs URL, meta apraksts un strukturētie dati.</p>
+   <h2>Mūsu ieteikumi</h2><p>Tekstā var būt virsraksti, saraksti, bildes un saites, piemēram, uz <a href="#edienkarte">ēdienkarti</a> vai <a href="#kontakti">kontaktiem</a>.</p>
+   <h2>Kā mūs atrast</h2><p>Jautrais Ods atrodas Launkalnes pagastā, Smiltenes novadā, pie Vidzemes šosejas.</p>
+  </article>
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="shead"><h2>Citi raksti</h2></div>${cards(POSTS.filter(x=>x!==p))}</section>`; }
+function pageContact(){ const o=openState(); return `
+  <section class="phead inner"><h1>Brauc ciemos</h1><p class="lead">Kafejnīca atrodas Smiltenes novadā, Launkalnes pagastā, pie Vidzemes šosejas.</p></section>
+  <section class="inner"><div class="cgrid">
+    <div class="map" aria-label="Shematiska karte">
+      <svg viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="800" height="520" fill="#E9EBEE"/>
+       <path d="M-20 450 C 160 400, 300 320, 464 232 S 740 80, 840 40" stroke="#FFFFFF" stroke-width="22" fill="none" stroke-linecap="round"/>
+       <path d="M464 232 C 400 160, 320 110, 200 64" stroke="#FFFFFF" stroke-width="12" fill="none"/>
+       <circle cx="190" cy="66" r="34" fill="#DDE0E4"/>
+       <text x="190" y="124" text-anchor="middle" font-family="Figtree,sans-serif" font-size="15" fill="#6A6E75">Smiltene</text>
+       <text x="600" y="168" font-family="Figtree,sans-serif" font-size="12" letter-spacing="2" fill="#6A6E75" transform="rotate(-24 600 168)">VIDZEMES ŠOSEJA</text>
+       <text x="34" y="496" font-family="Figtree,sans-serif" font-size="13" fill="#6A6E75">← Rīga</text></svg>
+      <div class="pin"><b>Jautrais Ods</b><i></i></div>
+      <div class="btns"><a class="btn btn-white" href="${MAPS}" target="_blank" rel="noopener">${NL.g}Google Maps</a><a class="btn btn-white" href="${WAZE}" target="_blank" rel="noopener">${NL.w}Waze</a></div>
+    </div>
+    <div class="cbox"><h2>Informācija</h2><div class="kv">
+      <div><span>Adrese</span><b>“Jautrais Ods”, Launkalnes pagasts, Smiltenes novads</b></div>
+      <div><span>Tālrunis</span><b id="phone">+371 64772610</b><button class="copy" data-copy="+371 64772610">Kopēt</button></div>
+      <div><span>Šodien</span><b>${o.txt.replace("Šobrīd ","")}</b></div>
+    </div></div>
+  </div></section>
+  <section class="sec inner"><div class="two">
+    <div><h2>Darba laiks</h2><div style="margin-top:22px;background:var(--card);border-radius:var(--r);padding:12px">${hoursList("light")}</div></div>
+    <div><h2>Biežāk uzdotie jautājumi</h2><div class="faq" style="margin-top:22px">
+      <details open><summary>Vai var rezervēt galdiņu?</summary><p>Jā, zvaniet pa tālruni +371 64772610.</p></details>
+      <details><summary>Vai var uzlādēt elektroauto?</summary><p>Jā, pie kafejnīcas ir elektroauto uzlādes stacija.</p></details>
+      <details><summary>Vai ir porcijas bērniem?</summary><p>Daudzām zupām un otrajiem ēdieniem ir mazā porcija par zemāku cenu.</p></details>
+      <details><summary>Cik tālu no Smiltenes?</summary><p>Kafejnīca atrodas Smiltenes novadā, pie Vidzemes šosejas. Maršrutu ērtāk atvērt Google Maps vai Waze.</p></details>
+    </div></div>
+  </div></section>`; }
+
+/* ---------- Router ---------- */
+let timer=null,cur=0;
+function route(){ const h=(location.hash||"#sakums").slice(1); let page=h,anchor=null;
+  if(h.startsWith("edienkarte-")){ page="edienkarte"; anchor="cat-"+h.slice(11); }
+  const post=POSTS.find(p=>p.slug===h); clearInterval(timer);
+  const app=$("#app");
+  if(post){ app.innerHTML=pageArticle(post); page="blogs"; }
+  else if(page==="edienkarte"){ app.innerHTML=pageMenu(); renderMenu();
+    const onq=e=>{ mQuery=e.target.value; $("#mq").value=mQuery; $("#mq2").value=mQuery; renderMenu(); };
+    $("#mq").addEventListener("input",onq); $("#mq2").addEventListener("input",onq); }
+  else if(page==="par-mums") app.innerHTML=pageAbout();
+  else if(page==="blogs") app.innerHTML=pageBlog();
+  else if(page==="kontakti") app.innerHTML=pageContact();
+  else { page="sakums"; app.innerHTML=pageHome(); renderHomePanel(); startSlider(); }
+  document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  menu(false); document.body.dataset.page=page;
+  if(anchor) requestAnimationFrame(()=>{ const el=document.getElementById(anchor); if(el) el.scrollIntoView(); }); else scrollTo(0,0);
+}
+function renderHomePanel(){ const c=MENU.find(x=>x.id===homeCat); $("#hPanel").innerHTML=catPanel(c)+`<p class="mfine">Visas cenas un pārējās kategorijas atradīsiet <a class="tlink" href="#edienkarte" style="display:inline-flex">ēdienkartes lapā ${ARR}</a></p>`;
+  document.querySelectorAll("[data-hcat]").forEach(b=>b.setAttribute("aria-current",b.dataset.hcat===homeCat)); }
+addEventListener("hashchange",route);
+
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function go(i){ const s=document.querySelectorAll(".slide"),d=document.querySelectorAll(".idx button"); if(!s.length) return;
+  cur=(i+s.length)%s.length; s.forEach((el,k)=>{ el.classList.toggle("on",k===cur); el.setAttribute("aria-hidden",k!==cur); });
+  d.forEach((el,k)=>{ el.classList.remove("on"); void el.offsetWidth; if(k===cur) el.classList.add("on"); });
+  clearInterval(timer); if(!reduce) timer=setInterval(()=>{ if(!$("#slider").matches(":hover")) go(cur+1); },6000); }
+function startSlider(){ cur=0; const sl=$("#slider"); let x0=null;
+  sl.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+  sl.addEventListener("touchend",e=>{ if(x0==null) return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) go(cur+(dx<0?1:-1)); x0=null; }); go(0); }
+
+function spy(){ if(document.body.dataset.page!=="edienkarte") return; let id=MENU[0].id; document.querySelectorAll(".panel[id]").forEach(s=>{ if(s.getBoundingClientRect().top<240) id=s.id.slice(4); });
+  document.querySelectorAll("[data-tab]").forEach(t=>{ const on=t.dataset.tab===id; if(t.getAttribute("aria-current")!==String(on)){ t.setAttribute("aria-current",on); if(on && innerWidth<=980) t.scrollIntoView({inline:"center",block:"nearest"}); } }); }
+addEventListener("scroll",spy,{passive:true});
+
+function menu(o){ $("#mnav").classList.toggle("on",o); $("#mscrim").classList.toggle("on",o); $("#burger").classList.toggle("x",o); $("#burger").setAttribute("aria-expanded",o); $("#burger").setAttribute("aria-label",o?"Aizvērt izvēlni":"Atvērt izvēlni"); }
+$("#burger").onclick=()=>menu(!$("#mnav").classList.contains("on"));
+$("#mscrim").onclick=()=>menu(false);
+function renderTopbar(){ const o=openState(),{wd}=rigaNow();
+  $("#topbar").innerHTML=`<span class="st ${o.open?"":"closed"}"><i></i>${o.txt}</span><span class="dim hide-s">Šodien ${hrs(wd)}</span><a href="tel:+37164772610">+371 64772610</a>`; }
+renderTopbar(); setInterval(renderTopbar,60000);
+
+let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),1800); }
+document.addEventListener("click",e=>{
+  const hc=e.target.closest("[data-hcat]"); if(hc){ homeCat=hc.dataset.hcat; renderHomePanel(); return; }
+  const sl=e.target.closest("[data-slide]"); if(sl){ go(+sl.dataset.slide); return; }
+  const lg=e.target.closest("[data-lang]"); if(lg){ document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b===lg)); if(lg.dataset.lang==="en") toast("EN versija tiks pievienota Next.js projektā"); return; }
+  const cp=e.target.closest("[data-copy]"); if(cp){ const v=cp.dataset.copy; (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast("Numurs nokopēts")).catch(()=>{ const r=document.createRange(); r.selectNodeContents($("#phone")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast("Numurs iezīmēts"); }); return; }
+});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") menu(false); });
+route();
+</script>
+
+</body>
+</html>
