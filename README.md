@@ -2,9 +2,9 @@
 
 Statiska lapa (HTML + WebP bildes). Hostēta Cloudflare Pages, savienota ar šo GitHub repo.
 
-**Cloudflare Pages iestatījumi**
-- Framework preset: None
+**Cloudflare iestatījumi (Workers ar statiskajiem failiem)**
 - Build command: (tukšs)
-- Build output directory: `/`
+- Deploy command: `npx wrangler deploy`
+- Lapas faili ir mapē `public/`, konfigurācija `wrangler.jsonc`
 
 Lapa ir ar `noindex`, lai prototips neparādītos Google. Kad būs gatava Next.js + Sanity versija, šo repo aizstās.
