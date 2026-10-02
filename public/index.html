@@ -72,6 +72,10 @@ a:hover .ar{transform:translateX(3px)}
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .hdr .wrap{height:var(--hdr);display:flex;align-items:center;gap:28px}
 .brand{font-family:var(--serif);font-size:24px;letter-spacing:-.01em;white-space:nowrap}
+.hbrand{display:flex;align-items:center;gap:12px;line-height:1}
+.hbrand img{height:48px;width:auto;display:block;margin-top:-2px}
+@media (max-width:900px){.hbrand{gap:9px;font-size:21px}.hbrand img{height:36px}}
+@media (max-width:380px){.hbrand span{font-size:19px}.hbrand img{height:32px}}
 .nav{display:flex;gap:6px;margin-left:auto}
 .nav a{font-size:14.5px;color:var(--muted);padding:8px 14px;border-radius:8px;transition:color .2s,background .2s}
 .nav a:hover{color:var(--ink)}
@@ -310,7 +314,7 @@ footer .fp{color:var(--muted);font-size:14px;max-width:34ch;margin:14px 0 0}
 <div class="topbar" role="note" aria-label="Šodien"><div class="wrap" id="topbar"></div></div>
 <header class="hdr" id="hdr">
   <div class="wrap">
-    <a class="brand" href="#sakums">Jautrais Ods</a>
+    <a class="brand hbrand" href="#sakums" aria-label="Jautrais Ods — sākums"><img src="img/logo-ods.webp" alt="" width="300" height="144"><span>Jautrais Ods</span></a>
     <nav class="nav" aria-label="Galvenā navigācija">
       <a href="#edienkarte" data-nav="edienkarte">Ēdienkarte</a>
       <a href="#par-mums" data-nav="par-mums">Par mums</a>
