@@ -54,7 +54,6 @@ h1 em,h2 em{font-style:italic}
 .lead{font-size:18px;color:var(--muted);max-width:52ch;margin:0}
 .ar{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;flex:none;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 .ar svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-a:hover .ar{transform:translateX(3px)}
 .btn .ar{margin-right:-12px;margin-left:4px}
 .btn-white .ar{background:var(--ink);color:#fff}
 .btn-ink .ar{background:#fff;color:var(--ink)}
@@ -63,10 +62,10 @@ a:hover .ar{transform:translateX(3px)}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 24px;font-weight:600;font-size:14.5px;transition:background .2s,color .2s}
-.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#000}
-.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:var(--bg)}
-.btn-soft{background:var(--soft)}.btn-soft:hover{background:var(--soft-2)}
-.btn-glass{background:rgba(255,255,255,.14);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.btn-glass:hover{background:rgba(255,255,255,.24)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-soft{background:var(--soft)}
+.btn-glass{background:rgba(255,255,255,.14);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 
 /* Top bar */
 .topbar{background:var(--dark);color:#E8EAED;font-size:12.5px}
@@ -88,12 +87,10 @@ a:hover .ar{transform:translateX(3px)}
 @media (max-width:380px){.hbrand span{font-size:19px}.hbrand img{height:32px}}
 .nav{display:flex;gap:6px;margin-left:auto}
 .nav a{font-size:14.5px;color:var(--muted);padding:8px 14px;border-radius:8px;transition:color .2s,background .2s}
-.nav a:hover{color:var(--ink)}
 .nav a[aria-current="page"]{color:var(--ink);background:var(--soft)}
 .hdr-r{display:flex;align-items:center;gap:16px}
 .go{display:flex;gap:8px}
 .go a{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border-radius:10px;font-size:13px;font-weight:500;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.05);transition:box-shadow .2s}
-.go a:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
 .go .ic{width:24px;height:24px;border-radius:7px;display:grid;place-items:center}
 .go .ic svg{width:15px;height:15px}
 .go .g .ic,.nlogo.g{background:#fff;box-shadow:inset 0 0 0 1px var(--soft-2)}
@@ -151,7 +148,6 @@ a:hover .ar{transform:translateX(3px)}
 .slide.on .in>*:nth-child(2){transition-delay:.08s}.slide.on .in>*:nth-child(3){transition-delay:.16s}.slide.on .in>*:nth-child(4){transition-delay:.24s}
 .idx{position:absolute;z-index:3;right:clamp(20px,3vw,40px);bottom:clamp(24px,3vw,36px);display:flex;gap:10px}
 .idx button{position:relative;overflow:hidden;text-align:left;color:#fff;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:8px;padding:12px 16px;min-width:150px;font-size:13px;line-height:1.3;transition:background .2s}
-.idx button:hover{background:rgba(255,255,255,.18)}
 .idx b{display:block;font-family:var(--serif);font-weight:400;font-size:15px;opacity:.6}
 .idx button.on b{opacity:1}
 .idx i{position:absolute;left:0;bottom:0;height:2px;width:0;background:#fff}
@@ -179,7 +175,6 @@ a:hover .ar{transform:translateX(3px)}
 .menu{display:grid;grid-template-columns:260px 1fr;gap:clamp(20px,3vw,48px);align-items:start}
 .rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hdr) + 16px);display:flex;flex-direction:column;gap:2px}
 .rail button,.rail a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;text-align:left;font-family:var(--serif);font-size:21px;color:var(--muted);padding:10px 16px;border-radius:8px;transition:background .2s,color .2s}
-.rail button:hover,.rail a:hover{color:var(--ink)}
 .rail [aria-current="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04)}
 .rail small{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
 .rail .search{margin-bottom:12px}
@@ -248,7 +243,6 @@ a:hover .ar{transform:translateX(3px)}
 .card p{margin:0;color:var(--muted);font-size:14.5px}
 .card .meta{font-size:12.5px;color:var(--muted)}
 .card .meta b{color:var(--accent);font-weight:600}
-.card:hover h3{color:var(--accent)}
 
 /* Visit panel */
 .visit{background:var(--dark);color:#ECEDEF;border-radius:var(--r);padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px)}
@@ -296,7 +290,6 @@ a:hover .ar{transform:translateX(3px)}
 .kv div span{display:block;font-size:13.5px;color:var(--muted);margin-bottom:2px}
 .kv div b{font-family:var(--serif);font-weight:400;font-size:22px}
 .copy{font-size:12px;background:var(--soft);border-radius:7px;padding:4px 12px;margin-left:10px;vertical-align:4px}
-.copy:hover{background:var(--soft-2)}
 .faq{display:grid;gap:8px}
 .faq details{background:var(--card);border-radius:10px;padding:18px 22px}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:500;font-size:16px}
@@ -311,13 +304,47 @@ footer{padding-block:clamp(48px,6vw,80px) calc(32px + env(safe-area-inset-bottom
 @media (max-width:820px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}}
 footer h4{font-size:14px;color:var(--muted);font-weight:500;margin:0 0 14px}
 footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:14.5px}
-footer ul a:hover{color:var(--accent)}
 footer .fp{color:var(--muted);font-size:14px;max-width:34ch;margin:14px 0 0}
 .fbot{margin-top:48px;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;background:var(--ink);color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;z-index:95;transition:.3s;pointer-events:none;max-width:calc(100% - 32px)}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Interaction states: hover only on devices that can hover (no sticky hover after tap on phones) */
+@media (hover:hover){
+a:hover .ar{transform:translateX(3px)}
+.btn-ink:hover{background:#000}
+.btn-white:hover{background:var(--bg)}
+.btn-soft:hover{background:var(--soft-2)}
+.btn-glass:hover{background:rgba(255,255,255,.24)}
+.nav a:hover{color:var(--ink)}
+.go a:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.idx button:hover{background:rgba(255,255,255,.18)}
+.rail button:not([aria-current="true"]):hover,.rail a:not([aria-current="true"]):hover{color:var(--ink);background:color-mix(in srgb,var(--card) 60%,transparent)}
+.card:hover h3{color:var(--accent)}
+.copy:hover{background:var(--soft-2)}
+footer ul a:hover{color:var(--accent)}
+.mnav a:not([aria-current="page"]):hover{background:var(--bg)}
+}
+@media (hover:hover) and (max-width:980px){
+.rail button:not([aria-current="true"]):hover,.rail a:not([aria-current="true"]):hover{background:var(--soft-2);color:var(--ink)}
+}
+/* Current category: explicit, wins over any hover/focus */
+.rail button[aria-current="true"],.rail a[aria-current="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+@media (max-width:980px){
+.rail button[aria-current="true"],.rail a[aria-current="true"]{background:var(--ink);color:#fff;box-shadow:none}
+.rail button[aria-current="true"] small,.rail a[aria-current="true"] small{color:rgba(255,255,255,.65)}
+}
+/* Press feedback */
+.btn,.go a,.rail button,.rail a,.idx button,.mnav a,.burger,.mlang button,.copy{-webkit-tap-highlight-color:transparent}
+.btn,.go a,.burger,.copy,.mlang button{transition:background .2s,color .2s,box-shadow .2s,transform .12s}
+.btn:active,.go a:active,.burger:active,.copy:active,.idx button:active{transform:scale(.97)}
+.rail button:active,.rail a:active{opacity:.85}
+.mnav a:active{background:var(--soft)}
+.faq summary:active{opacity:.7}
+.card:active h3{color:var(--accent)}
+footer ul a:active,.nav a:active{color:var(--ink)}
 </style>
 
 </head>
