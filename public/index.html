@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%231C1D1F%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22Georgia,serif%22 font-size=%2216%22 fill=%22%23fff%22 text-anchor=%22middle%22%3EJO%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#F4F5F7">
 <title>Jautrais Ods</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Jautrais Ods — kafejnīca un restorāns Smiltenes novadā. Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -274,9 +277,10 @@ a:hover .ar{transform:translateX(3px)}
 .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(16px,2vw,24px)}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr}}
 .map{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--soft)}
-.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map > svg{position:absolute;inset:0;width:100%;height:100%}
 .map .pin{position:absolute;left:58%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
 .map .pin b{background:var(--ink);color:#fff;font-weight:500;font-size:13px;padding:8px 14px;border-radius:8px;white-space:nowrap}
+.map .pin .pin-ods{width:76px;height:auto;margin-bottom:6px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.12))}
 .map .pin i{width:10px;height:10px;background:var(--ink);transform:rotate(45deg);margin-top:-6px}
 .map .btns{position:absolute;left:18px;bottom:18px;display:flex;gap:8px;flex-wrap:wrap}
 .cbox{background:var(--card);border-radius:var(--r);padding:clamp(24px,3vw,40px)}
@@ -588,8 +592,8 @@ function pageContact(){ const o=openState(); return `
        <circle cx="190" cy="66" r="34" fill="#DDE0E4"/>
        <text x="190" y="124" text-anchor="middle" font-family="Figtree,sans-serif" font-size="15" fill="#6A6E75">Smiltene</text>
        <text x="600" y="168" font-family="Figtree,sans-serif" font-size="12" letter-spacing="2" fill="#6A6E75" transform="rotate(-24 600 168)">VIDZEMES ŠOSEJA</text>
-       <text x="34" y="496" font-family="Figtree,sans-serif" font-size="13" fill="#6A6E75">← Rīga</text></svg>
-      <div class="pin"><b>Jautrais Ods</b><i></i></div>
+       <text x="40" y="392" font-family="Figtree,sans-serif" font-size="13" fill="#6A6E75">← Rīga</text></svg>
+      <div class="pin"><img class="pin-ods" src="img/ods.webp" alt="" width="240" height="165"><b>Jautrais Ods</b><i></i></div>
       <div class="btns"><a class="btn btn-white" href="${MAPS}" target="_blank" rel="noopener">${NL.g}Google Maps</a><a class="btn btn-white" href="${WAZE}" target="_blank" rel="noopener">${NL.w}Waze</a></div>
     </div>
     <div class="cbox"><h2>Informācija</h2><div class="kv">
