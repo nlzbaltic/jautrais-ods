@@ -520,9 +520,10 @@ const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
 const countOf=c=>c.items.filter(Array.isArray).length;
 function rigaNow(){ const p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Riga",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()); const g=t=>p.find(x=>x.type===t).value; return {wd:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g("weekday")],h:+g("hour")+ +g("minute")/60}; }
 function openState(){ const {wd,h}=rigaNow(),t=H[wd];
-  if(t&&h>=t[0]&&h<t[1]) return {open:true,txt:`Šobrīd atvērts · līdz ${t[1]}:00`};
-  if(t&&h<t[0]) return {open:false,txt:`Šobrīd slēgts · atveram ${t[0]}:00`};
-  let d=wd,s=0; do{d=(d+1)%7;s++;}while(!H[d]); return {open:false,txt:`Šobrīd slēgts · atveram ${s===1?"rīt":DAYN[d].toLowerCase()} ${H[d][0]}:00`}; }
+  if(t&&h>=t[0]&&h<t[1]) return {open:true,txt:`Šobrīd atvērta · līdz ${t[1]}:00`};
+  if(t&&h<t[0]) return {open:false,txt:`Šobrīd slēgta · atvērta šodien no ${t[0]}:00`};
+  let d=wd,s=0; do{d=(d+1)%7;s++;}while(!H[d]); return {open:false,txt:`Šobrīd slēgta · atvērta ${s===1?"rīt":DAYLOC[d]} no ${H[d][0]}:00`}; }
+const DAYLOC=["svētdien","pirmdien","otrdien","trešdien","ceturtdien","piektdien","sestdien"];
 const hrs=d=>H[d]?`${H[d][0]}:00–${H[d][1]}:00`:"Slēgts";
 function hoursList(cls=""){ const {wd}=rigaNow(); return `<div class="hours ${cls}">${[1,2,3,4,5,6,0].map(d=>`<div class="${d===wd?"today":""}"><span>${DAYN[d]}${d===wd?" · šodien":""}</span><span>${hrs(d)}</span></div>`).join("")}</div>`; }
 
@@ -643,7 +644,7 @@ function pageContact(){ const o=openState(); return `
     <div class="cbox"><h2>Informācija</h2><div class="kv">
       <div><span>Adrese</span><b>“Jautrais Ods”, Launkalnes pagasts, Smiltenes novads</b></div>
       <div><span>Tālrunis</span><b id="phone">+371 64772610</b><button class="copy" data-copy="+371 64772610">Kopēt</button></div>
-      <div><span>Šodien</span><b>${o.txt.replace("Šobrīd ","")}</b></div>
+      <div><span>Šobrīd</span><b>${o.txt.replace("Šobrīd ","").replace(/^./,c=>c.toUpperCase())}</b></div>
     </div></div>
   </div></section>
   <section class="sec inner"><div class="two">
@@ -696,7 +697,7 @@ function menu(o){ $("#mnav").classList.toggle("on",o); $("#mscrim").classList.to
 $("#burger").onclick=()=>menu(!$("#mnav").classList.contains("on"));
 $("#mscrim").onclick=()=>menu(false);
 function renderTopbar(){ const o=openState(),{wd}=rigaNow();
-  $("#topbar").innerHTML=`<span class="st ${o.open?"":"closed"}"><i></i>${o.txt}</span><span class="dim hide-s">Šodien ${hrs(wd)}</span><a href="tel:+37164772610">+371 64772610</a>`; }
+  $("#topbar").innerHTML=`<span class="st ${o.open?"":"closed"}"><i></i>${o.txt}</span><span class="dim hide-s">Šodien ${H[wd]?hrs(wd):"slēgta"}</span><a href="tel:+37164772610">+371 64772610</a>`; }
 renderTopbar(); setInterval(renderTopbar,60000);
 
 let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),1800); }
