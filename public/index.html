@@ -5,11 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F4F5F7">
-<title>Jautrais Ods</title>
+<title>Kafejnīca Smiltenē – Jautrais Ods</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="Jautrais Ods — kafejnīca un restorāns Smiltenes novadā. Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas.">
+<meta name="description" content="Kafejnīca Jautrais Ods pie Smiltenes: latviešu virtuve, zupas, karbonādes un pankūkas. Kamīnzāle, terase un EV uzlāde pie Vidzemes šosejas.">
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="Jautrais Ods">
+<meta property="og:locale" content="lv_LV">
+<meta property="og:title" content="Kafejnīca Smiltenē – Jautrais Ods">
+<meta property="og:description" content="Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas, netālu no Smiltenes.">
+<meta property="og:image" content="img/hero-fasade.webp">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=Figtree:wght@400;500;600&display=swap">
@@ -461,6 +468,16 @@ const POSTS=[
 ];
 const H={0:[11,18],1:null,2:[10,19],3:[9,19],4:[9,19],5:[10,20],6:[10,20]};
 const DAYN=["Svētdiena","Pirmdiena","Otrdiena","Trešdiena","Ceturtdiena","Piektdiena","Sestdiena"];
+const SEO={
+ sakums:["Kafejnīca Smiltenē – Jautrais Ods","Kafejnīca Jautrais Ods pie Smiltenes: latviešu virtuve, zupas, karbonādes un pankūkas. Kamīnzāle, terase un EV uzlāde pie Vidzemes šosejas."],
+ edienkarte:["Ēdienkarte – Kafejnīca Jautrais Ods, Smiltene","Jautrā Oda ēdienkarte: siltās uzkodas, zupas, salāti, karbonādes, zivis, pankūkas un deserti. Cenas un mazās porcijas. Kafejnīca Smiltenes novadā."],
+ "par-mums":["Par mums – Kafejnīca Jautrais Ods pie Smiltenes","Mājīga kafejnīca Smiltenes novadā ar kamīnzāli, terasi, šūpolēm bērniem un elektroauto uzlādi. Latviešu virtuve pie Vidzemes šosejas."],
+ blogs:["Blogs – Jautrais Ods, kafejnīca Smiltenē","Ceļveži, receptes un padomi: kur paēst Smiltenē, ko apskatīt Smiltenes novadā un stāsti no Jautrā Oda virtuves."],
+ kontakti:["Kontakti un darba laiks – Jautrais Ods, Smiltene","Kafejnīca Jautrais Ods: Launkalnes pagasts, Smiltenes novads, pie Vidzemes šosejas. Tālrunis +371 64772610, darba laiks un maršruts."]
+};
+function setSEO(t,d){ document.title=t; const m=document.querySelector('meta[name="description"]'); if(m) m.setAttribute("content",d);
+  const ot=document.querySelector('meta[property="og:title"]'); if(ot) ot.setAttribute("content",t);
+  const od=document.querySelector('meta[property="og:description"]'); if(od) od.setAttribute("content",d); }
 const MAPS="https://www.google.com/maps/search/?api=1&query=Jautrais+Ods+Launkalnes+pagasts";
 const WAZE="https://waze.com/ul?q=Jautrais%20Ods%20Smiltene&navigate=yes";
 
@@ -627,6 +644,7 @@ function route(){ const h=(location.hash||"#sakums").slice(1); let page=h,anchor
   else if(page==="kontakti") app.innerHTML=pageContact();
   else { page="sakums"; app.innerHTML=pageHome(); renderHomePanel(); startSlider(); }
   document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  if(post) setSEO(post.title+" – Jautrais Ods",post.ex); else setSEO(...(SEO[page]||SEO.sakums));
   menu(false); document.body.dataset.page=page;
   if(anchor) requestAnimationFrame(()=>{ const el=document.getElementById(anchor); if(el) el.scrollIntoView(); }); else scrollTo(0,0);
 }
