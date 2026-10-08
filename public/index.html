@@ -226,7 +226,7 @@ h1 em,h2 em{font-style:italic}
 .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,250px);gap:12px;grid-auto-flow:dense}
 .bento .lbt{border-radius:10px}
 .b-a{grid-column:span 2;grid-row:span 2}.b-t{grid-row:span 2}.b-w{grid-column:span 2}
-@media (max-width:760px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.bento .b-a{grid-column:1/-1}}
+@media (max-width:760px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:150px;grid-auto-flow:row}.bento .b-a,.bento .b-w{grid-column:1/-1}}
 .lbt{position:relative;overflow:hidden;padding:0;border:0;display:block;width:100%;height:100%;cursor:zoom-in;background:var(--soft)}
 .lbt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 @media (hover:hover){.lbt:hover img{transform:scale(1.04)}}
@@ -598,14 +598,6 @@ function pageHome(){ return `
   </div></section>
 
   <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">
-    <div class="gal-head"><div><h2>Kā pie mums izskatās</h2><p class="lead">Kafejnīca priežu ielokā, dārzs ar lapenēm un terase pie Vidzemes šosejas.</p></div><button class="tlink" data-lb="kafejnica-rudens">Visas bildes (${GALLERY.length}) ${ARR}</button></div>
-    <div class="bento">
-      ${lbt("kafejnica-rudens-rati","b-a","(max-width:760px) 100vw, 50vw")}${lbt("laterna-un-kafejnica","b-t")}${lbt("terase-galdins-ziedi")}${lbt("lapene-galdins")}
-      ${lbt("izkartne-jautrais-ods")}${lbt("darzs-dzirnakmens","b-w","(max-width:760px) 100vw, 50vw")}${lbt("klets-un-kafejnica","","(max-width:760px) 50vw, 25vw",`<span class="more">+${GALLERY.length-7} bildes</span>`)}
-    </div>
-  </section>
-
-  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">
     <div class="shead"><div><h2>Ēdienkarte</h2></div><a class="tlink" href="#edienkarte">Visa ēdienkarte ${ARR}</a></div>
     <div class="menu">
       <nav class="rail" aria-label="Kategorijas">${MENU.map(c=>`<button data-hcat="${c.id}" aria-current="${c.id===homeCat}">${c.t}<small>${countOf(c)}</small></button>`).join("")}</nav>
@@ -613,11 +605,19 @@ function pageHome(){ return `
     </div>
   </section>
 
-  <section class="inner"><div class="sigblock">
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="sigblock">
     ${pic("terase-aizkari","Terase ar aizkariem, kur pasniedzam ēdienus","","(max-width:900px) 100vw, 50vw")}
     <div class="txt"><div><h2>Cūkgaļas karbonāde “Jautrā Oda” gaumē</h2><p class="lead">Sulīga karbonāde ar žāvētu šķiņķi, tomātiem, šampinjoniem un kausētu sieru, pasniegta ar maizi.</p></div>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><span class="pr price">7,50 €</span><a class="btn btn-ink" href="#edienkarte-otrie">Otrie ēdieni ${ARR}</a></div></div>
   </div></section>
+
+  <section class="inner">
+    <div class="gal-head"><div><h2>Kā pie mums izskatās</h2><p class="lead">Kafejnīca priežu ielokā, dārzs ar lapenēm un terase pie Vidzemes šosejas.</p></div><button class="tlink" data-lb="kafejnica-rudens">Visas bildes (${GALLERY.length}) ${ARR}</button></div>
+    <div class="bento">
+      ${lbt("kafejnica-rudens-rati","b-a","(max-width:760px) 100vw, 50vw")}${lbt("laterna-un-kafejnica","b-t")}${lbt("terase-galdins-ziedi")}${lbt("lapene-galdins")}
+      ${lbt("darzs-dzirnakmens","b-w","(max-width:760px) 100vw, 50vw")}${lbt("izkartne-jautrais-ods")}${lbt("klets-un-kafejnica","","(max-width:760px) 50vw, 25vw",`<span class="more">+${GALLERY.length-7} bildes</span>`)}
+    </div>
+  </section>
 
   <section class="sec inner">
     <div class="shead"><div><h2>Ērta pietura ceļā</h2></div></div>
