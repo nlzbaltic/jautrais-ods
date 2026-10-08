@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="/">
+<script>window.PATH_ROUTING=true</script>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F4F5F7">
 <title>Kafejnīca Smiltenē – Jautrais Ods</title>
@@ -765,7 +767,23 @@ function pageContact(){ const o=openState(); return `
 
 /* ---------- Router ---------- */
 let timer=null,cur=0;
-function route(){ const h=(location.hash||"#sakums").slice(1); let page=h,anchor=null;
+/* PATH_ROUTING=true (Cloudflare build): īsti URL /blogs, /blogs/<raksts>; artifact priekšskatījumā paliek #hash */
+const PR=!!window.PATH_ROUTING;
+function k2p(k){ if(!k||k==="sakums") return "/"; if(k.startsWith("raksts-")) return "/blogs/"+k.slice(7); if(k.startsWith("edienkarte-")) return "/edienkarte/"+k.slice(11); return "/"+k; }
+function p2k(p){ p=p.replace(/\/+$/,"")||"/"; if(p==="/") return "sakums"; let m=p.match(/^\/blogs\/(.+)$/); if(m) return "raksts-"+m[1]; m=p.match(/^\/edienkarte\/(.+)$/); if(m) return "edienkarte-"+m[1]; return p.slice(1); }
+function curKey(){ return PR ? p2k(decodeURIComponent(location.pathname)) : (location.hash||"#sakums").slice(1); }
+function fixLinks(){ if(PR) document.querySelectorAll('a[href^="#"]').forEach(a=>{ const k=a.getAttribute("href").slice(1); if(k) a.setAttribute("href",k2p(k)); }); }
+if(PR){
+  if(location.hash.length>1 && location.pathname==="/") history.replaceState(null,"",k2p(location.hash.slice(1)));
+  document.addEventListener("click",e=>{ if(e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+    const a=e.target.closest("a[href]"); if(!a||a.target||a.hasAttribute("download")) return;
+    const href=a.getAttribute("href"); let u;
+    if(href.startsWith("#")){ if(href.length<2) return; u=k2p(href.slice(1)); }
+    else if(href.startsWith("/")&&!href.startsWith("//")) u=href; else return;
+    e.preventDefault(); if(u!==location.pathname) history.pushState(null,"",u); route(); });
+  addEventListener("popstate",route);
+}
+function route(){ const h=curKey(); let page=h,anchor=null;
   if(h.startsWith("edienkarte-")){ page="edienkarte"; anchor="cat-"+h.slice(11); }
   const post=POSTS.find(p=>p.slug===h); clearInterval(timer);
   const app=$("#app");
@@ -780,6 +798,7 @@ function route(){ const h=(location.hash||"#sakums").slice(1); let page=h,anchor
   document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if(post) setSEO(post.seo,post.desc); else setSEO(...(SEO[page]||SEO.sakums));
   menu(false); document.body.dataset.page=page;
+  fixLinks();
   if(anchor) requestAnimationFrame(()=>{ const el=document.getElementById(anchor); if(el) el.scrollIntoView(); }); else scrollTo(0,0);
 }
 function rvIndex(){ const l=$(".rv-list"); if(!l) return 0; const cards=[...l.children]; const x=l.scrollLeft; let best=0,bd=1e9; cards.forEach((c,i)=>{ const d=Math.abs(c.offsetLeft-l.offsetLeft-x- (cards[0].offsetLeft-l.offsetLeft)); if(d<bd){bd=d;best=i;} }); return best; }
@@ -788,7 +807,7 @@ function rvSync(){ const l=$(".rv-list"); if(!l) return; const i=rvIndex(); docu
 function rvBind(){ const l=$(".rv-list"); if(!l) return; let t; l.addEventListener("scroll",()=>{ clearTimeout(t); t=setTimeout(rvSync,60); },{passive:true}); rvSync(); }
 function renderHomePanel(){ const c=MENU.find(x=>x.id===homeCat); $("#hPanel").innerHTML=catPanel(c)+`<p class="mfine">Visas cenas un pārējās kategorijas atradīsiet <a class="tlink" href="#edienkarte" style="display:inline-flex">ēdienkartes lapā ${ARR}</a></p>`;
   document.querySelectorAll("[data-hcat]").forEach(b=>b.setAttribute("aria-current",b.dataset.hcat===homeCat)); }
-addEventListener("hashchange",route);
+if(!PR) addEventListener("hashchange",route);
 
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 function go(i){ const s=document.querySelectorAll(".slide"),d=document.querySelectorAll(".idx button"); if(!s.length) return;
