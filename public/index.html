@@ -263,6 +263,19 @@ h1 em,h2 em{font-style:italic}
 .rv-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:1000px){.rv-list{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.rv-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * clamp(18px,3.4vw,40px));padding-inline:clamp(18px,3.4vw,40px);gap:10px}.rv-list::-webkit-scrollbar{display:none}.rv{flex:0 0 86%;scroll-snap-align:start}}
+.rv-nav{display:none}
+@media (max-width:640px){
+ .rv-list{scroll-behavior:smooth;scroll-padding-inline:clamp(18px,3.4vw,40px)}
+ .rv{flex:0 0 88%}
+ .rv-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+ .rv-dots{display:flex;gap:6px}
+ .rv-dots button{width:7px;height:7px;border-radius:4px;background:var(--soft-2);transition:width .25s,background .25s}
+ .rv-dots button[aria-current="true"]{width:22px;background:var(--ink)}
+ .rv-arr{display:flex;gap:8px}
+ .rv-arr button{width:40px;height:40px;border-radius:10px;background:var(--card);display:grid;place-items:center;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+ .rv-arr button:disabled{opacity:.35}
+ .rv-arr svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+}
 .rv{background:var(--card);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:14px}
 .rv-top{display:grid;grid-template-columns:44px 1fr 20px;gap:12px;align-items:center}
 .rv-top img.av{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block}
@@ -595,6 +608,8 @@ function reviewsHTML(){ return `<section class="sec inner" style="padding-top:0"
   <div class="rv-list">${RV.map((v,i)=>`<article class="rv"><div class="rv-top"><img class="av" src="img/${v.a}.webp" alt="" width="44" height="44" loading="lazy"><div><b>${v.n}</b><span>${v.d}</span></div><span class="g" title="Google atsauksme">${GLOGO}</span></div>
     <span class="stars" role="img" aria-label="5 no 5 zvaigznēm">★★★★★<i style="width:100%">★★★★★</i></span><p>${v.t}</p>${v.tr?`<span class="tr">Google tulkojums no krievu valodas</span>`:""}
     <div class="rv-ph">${v.ph.slice(0,3).map((ph,k)=>`<button class="lbt" data-rv="${i}" data-k="${k}" aria-label="Atvērt ${v.n} bildi ${k+1}"><img src="img/${ph}.webp" alt="Viesa bilde no Jautrā Oda" loading="lazy">${k===2&&v.ph.length>3?`<span class="more">+${v.ph.length-3}</span>`:""}</button>`).join("")}</div></article>`).join("")}</div>
+  <div class="rv-nav"><div class="rv-dots" role="tablist" aria-label="Atsauksmes">${RV.map((v,i)=>`<button data-rvdot="${i}" aria-label="Atsauksme ${i+1}" aria-current="${i===0}"></button>`).join("")}</div>
+   <div class="rv-arr"><button data-rvstep="-1" aria-label="Iepriekšējā atsauksme" disabled><svg viewBox="0 0 16 16"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg></button><button data-rvstep="1" aria-label="Nākamā atsauksme"><svg viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5"/></svg></button></div></div>
  </section>`; }
 const GI=Object.fromEntries(GALLERY.map((g,i)=>[g[0],i]));
 const lbt=(name,cls="",sizes="(max-width:760px) 50vw, 25vw",extra="")=>`<button class="lbt ${cls}" data-lb="${name}" aria-label="Atvērt bildi: ${GALLERY[GI[name]][1]}"><img src="img/${name}-sm.webp" srcset="img/${name}-sm.webp 1000w, img/${name}.webp 2000w" sizes="${sizes}" alt="${GALLERY[GI[name]][1]}" loading="lazy" decoding="async">${extra}</button>`;
@@ -765,12 +780,16 @@ function route(){ const h=(location.hash||"#sakums").slice(1); let page=h,anchor
   else if(page==="par-mums") app.innerHTML=pageAbout();
   else if(page==="blogs") app.innerHTML=pageBlog();
   else if(page==="kontakti") app.innerHTML=pageContact();
-  else { page="sakums"; app.innerHTML=pageHome(); renderHomePanel(); startSlider(); }
+  else { page="sakums"; app.innerHTML=pageHome(); renderHomePanel(); startSlider(); rvBind(); }
   document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if(post) setSEO(post.title+" – Jautrais Ods",post.ex); else setSEO(...(SEO[page]||SEO.sakums));
   menu(false); document.body.dataset.page=page;
   if(anchor) requestAnimationFrame(()=>{ const el=document.getElementById(anchor); if(el) el.scrollIntoView(); }); else scrollTo(0,0);
 }
+function rvIndex(){ const l=$(".rv-list"); if(!l) return 0; const cards=[...l.children]; const x=l.scrollLeft; let best=0,bd=1e9; cards.forEach((c,i)=>{ const d=Math.abs(c.offsetLeft-l.offsetLeft-x- (cards[0].offsetLeft-l.offsetLeft)); if(d<bd){bd=d;best=i;} }); return best; }
+function rvGo(i){ const l=$(".rv-list"); const cards=[...l.children]; i=Math.max(0,Math.min(cards.length-1,i)); l.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:"smooth"}); }
+function rvSync(){ const l=$(".rv-list"); if(!l) return; const i=rvIndex(); document.querySelectorAll("[data-rvdot]").forEach((d,k)=>d.setAttribute("aria-current",k===i)); const st=document.querySelectorAll("[data-rvstep]"); if(st.length){ st[0].disabled=i===0; st[1].disabled=i===l.children.length-1 || l.scrollLeft+l.clientWidth>=l.scrollWidth-4; } }
+function rvBind(){ const l=$(".rv-list"); if(!l) return; let t; l.addEventListener("scroll",()=>{ clearTimeout(t); t=setTimeout(rvSync,60); },{passive:true}); rvSync(); }
 function renderHomePanel(){ const c=MENU.find(x=>x.id===homeCat); $("#hPanel").innerHTML=catPanel(c)+`<p class="mfine">Visas cenas un pārējās kategorijas atradīsiet <a class="tlink" href="#edienkarte" style="display:inline-flex">ēdienkartes lapā ${ARR}</a></p>`;
   document.querySelectorAll("[data-hcat]").forEach(b=>b.setAttribute("aria-current",b.dataset.hcat===homeCat)); }
 addEventListener("hashchange",route);
@@ -798,6 +817,8 @@ renderTopbar(); setInterval(renderTopbar,60000);
 let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),1800); }
 document.addEventListener("click",e=>{
   const lbb=e.target.closest("[data-lb]"); if(lbb){ lbOpen(lbb.dataset.lb); return; }
+  const rvd=e.target.closest("[data-rvdot]"); if(rvd){ rvGo(+rvd.dataset.rvdot); return; }
+  const rvs=e.target.closest("[data-rvstep]"); if(rvs){ rvGo(rvIndex()+ +rvs.dataset.rvstep); return; }
   const rvb=e.target.closest("[data-rv]"); if(rvb){ const v=RV[+rvb.dataset.rv]; lbOpenList(v.ph.map((ph,k)=>[`img/${ph}.webp`,`${v.n} · Google atsauksme · bilde ${k+1}`]),+rvb.dataset.k); return; }
   const hc=e.target.closest("[data-hcat]"); if(hc){ homeCat=hc.dataset.hcat; renderHomePanel(); return; }
   const sl=e.target.closest("[data-slide]"); if(sl){ go(+sl.dataset.slide); return; }
