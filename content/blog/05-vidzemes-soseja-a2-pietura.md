@@ -34,7 +34,7 @@ Kafejnīca **Jautrais Ods** atrodas Launkalnes pagastā, Smiltenes novadā, tie�
 - **Kamīnzāle** aukstajā sezonā un **terase** ar dārzu un lapenēm vasarā.
 - **Šūpoles** un zaļš dārzs, kur bērni var izskrieties, kamēr pieaugušie dzer kafiju.
 
-Ja brauc lielākā grupā, iesakām piezvanīt iepriekš pa tālruni +371 64772610, lai varam sagatavoties. Aktuālais darba laiks vienmēr redzams mājaslapas augšējā joslā un [kontaktu lapā](#kontakti).
+Ja brauc lielākā grupā, iesakām piezvanīt iepriekš pa tālruni [+371 64772610](tel:+37164772610), lai varam sagatavoties. Aktuālais darba laiks vienmēr redzams mājaslapas augšējā joslā un [kontaktu lapā](#kontakti).
 
 ## Elektroauto uzlāde ceļā uz Smilteni un Igauniju
 
@@ -118,7 +118,7 @@ Pie Vidzemes šosejas Launkalnes pagastā, netālu no Smiltenes, atrodas kafejn�
 Jā, pie Jautrā Oda ir elektroauto uzlādes stacija.
 
 **Vai var atbraukt lielākā grupā?**
-Jā, bet lielākām grupām iesakām piezvanīt iepriekš pa tālruni +371 64772610, lai varam sagatavoties.
+Jā, bet lielākām grupām iesakām piezvanīt iepriekš pa tālruni [+371 64772610](tel:+37164772610), lai varam sagatavoties.
 
 **Ko apskatīt pie Vidzemes šosejas netālu no Smiltenes?**
 Niedrāja ezers, Silvas dendroparks, Vecsautiņu avoti un Kapusila kadiķis Launkalnes pagastā. Vairāk ideju atradīsi rakstos par [dabas takām Smiltenes novadā](#raksts-dabas-takas-smiltenes-novada) un to, [ko apskatīt Smiltenē](#raksts-ko-apskatit-smiltene).
