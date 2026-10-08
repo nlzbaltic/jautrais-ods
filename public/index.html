@@ -15,7 +15,7 @@
 <meta property="og:locale" content="lv_LV">
 <meta property="og:title" content="Kafejnīca Smiltenē – Jautrais Ods">
 <meta property="og:description" content="Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas, netālu no Smiltenes.">
-<meta property="og:image" content="img/hero-fasade.webp">
+<meta property="og:image" content="img/kafejnica-rudens.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -391,9 +391,9 @@ footer ul a:active,.nav a:active{color:var(--ink)}
 <script>
 /* ---------- Content (Sanity in production) ---------- */
 const SLIDES=[
- {img:"hero-fasade",short:"Kafejnīca",kicker:"Kafejnīca Smiltenes novadā",title:"Mājīgas pusdienas <em>pie Smiltenes</em>",text:"Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas. Gaidām gan ceļotājus, gan vietējos.",cta:["Skatīt ēdienkarti","#edienkarte"]},
- {img:"hero-pried",short:"Priežu ielokā",kicker:"",title:"Pietura <em>priežu ielokā</em>",text:"Ērta vieta, kur apstāties ceļā pa Vidzemes šoseju. Plaša autostāvvieta un mierīgs dārzs.",cta:["Kā mūs atrast","#kontakti"]},
- {img:"hero-terase",short:"Terase un dārzs",kicker:"Siltajā sezonā",title:"Terase, šūpoles <em>un EV uzlāde</em>",text:"Kamēr jūs pusdienojat, bērni šūpojas un auto lādējas.",cta:["Par kafejnīcu","#par-mums"]}
+ {img:"kafejnica-rudens",short:"Kafejnīca",kicker:"Kafejnīca Smiltenes novadā",title:"Mājīgas pusdienas <em>pie Smiltenes</em>",text:"Latviešu virtuve, kamīnzāle un terase pie Vidzemes šosejas. Gaidām gan ceļotājus, gan vietējos.",cta:["Skatīt ēdienkarti","#edienkarte"]},
+ {img:"klets-un-kafejnica-plasi",short:"Priežu ielokā",kicker:"",title:"Pietura <em>priežu ielokā</em>",text:"Ērta vieta, kur apstāties ceļā pa Vidzemes šoseju. Plaša autostāvvieta un mierīgs dārzs.",cta:["Kā mūs atrast","#kontakti"]},
+ {img:"darzs-lapenes",short:"Terase un dārzs",kicker:"Siltajā sezonā",title:"Terase, šūpoles <em>un EV uzlāde</em>",text:"Kamēr jūs pusdienojat, bērni šūpojas un auto lādējas.",cta:["Par kafejnīcu","#par-mums"]}
 ];
 const MENU=[
  {id:"uzkodas",t:"Siltās uzkodas",items:[
@@ -489,9 +489,9 @@ const MENU=[
   ["Saldējuma kokteilis ar plūmju sulu","",[4]]]}
 ];
 const POSTS=[
- {slug:"raksts-kur-paest-smiltene",cat:"Ceļvedis",date:"28. septembris",img:"fasade-ziedi",title:"Kur paēst Smiltenē un apkārtnē",ex:"Kafejnīcas, restorāni un pusdienu vietas, ko vērts zināt, braucot cauri Smiltenes novadam."},
- {slug:"raksts-smiltenes-novads",cat:"Apkārtne",date:"14. septembris",img:"rati",title:"Ko apskatīt Smiltenes novadā vienā dienā",ex:"Takas, ezeri un skatu vietas, kas labi sader ar pusdienu pieturu pie mums."},
- {slug:"raksts-karbonade",cat:"Virtuve",date:"2. septembris",img:"kafejnica-tuvu",title:"Karbonāde “Jautrā Oda” gaumē",ex:"Šķiņķis, tomāti, šampinjoni un siers. Stāsts par ēdienu, ko pasūta visbiežāk."}
+ {slug:"raksts-kur-paest-smiltene",cat:"Ceļvedis",date:"28. septembris",img:"vidzemes-soseja",title:"Kur paēst Smiltenē un apkārtnē",ex:"Kafejnīcas, restorāni un pusdienu vietas, ko vērts zināt, braucot cauri Smiltenes novadam."},
+ {slug:"raksts-smiltenes-novads",cat:"Apkārtne",date:"14. septembris",img:"info-stends-smiltenes-novads",title:"Ko apskatīt Smiltenes novadā vienā dienā",ex:"Takas, ezeri un skatu vietas, kas labi sader ar pusdienu pieturu pie mums."},
+ {slug:"raksts-karbonade",cat:"Virtuve",date:"2. septembris",img:"fasade-priekspuse",title:"Karbonāde “Jautrā Oda” gaumē",ex:"Šķiņķis, tomāti, šampinjoni un siers. Stāsts par ēdienu, ko pasūta visbiežāk."}
 ];
 const H={0:[11,18],1:null,2:[10,19],3:[9,19],4:[9,19],5:[10,20],6:[10,20]};
 const DAYN=["Svētdiena","Pirmdiena","Otrdiena","Trešdiena","Ceturtdiena","Piektdiena","Sestdiena"];
@@ -514,7 +514,7 @@ const NL={g:`<span class="nlogo g"><svg aria-hidden="true" xmlns="http://www.w3.
 const ARR=`<span class="ar" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3.5 8h9M8.5 4l4 4-4 4"/></svg></span>`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const eur=n=>n.toFixed(2).replace(".",",")+" €";
-const pic=(name,alt,cl="")=>`<div class="photo ${cl}"><img src="img/${name}.webp" alt="${alt}" loading="lazy" decoding="async"></div>`;
+const pic=(name,alt,cl="",sizes="(max-width:900px) 100vw, 50vw")=>`<div class="photo ${cl}"><img src="img/${name}-sm.webp" srcset="img/${name}-sm.webp 1000w, img/${name}.webp 2000w" sizes="${sizes}" alt="${alt}" loading="lazy" decoding="async"></div>`;
 const ph=(cls,label,cl="")=>`<div class="photo ${cl}"><div class="ph ${cls}"></div><div class="grain"></div>${label?`<span class="lbl">${label}</span>`:""}</div>`;
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
 const countOf=c=>c.items.filter(Array.isArray).length;
@@ -541,7 +541,7 @@ function catPanel(c,q=""){
 let homeCat="uzkodas";
 function pageHome(){ return `
   <section class="wrap"><div class="slider" id="slider" aria-roledescription="carousel" aria-label="Baneri">
-    ${SLIDES.map((s,i)=>`<div class="slide${i?"":" on"}" aria-hidden="${!!i}"><div class="img" style="background-image:url(img/${s.img}.webp)" role="img" aria-label="${s.short}"></div>
+    ${SLIDES.map((s,i)=>`<div class="slide${i?"":" on"}" aria-hidden="${!!i}"><div class="img" style="background-image:image-set(url(img/${s.img}-sm.webp) 1x, url(img/${s.img}.webp) 2x)" role="img" aria-label="${s.short}"></div>
       <div class="in">${i?`<h2>${s.title}</h2>`:`<h1>${s.title}</h1>`}<p>${s.text}</p><a class="btn btn-white" href="${s.cta[1]}">${s.cta[0]} ${ARR}</a></div></div>`).join("")}
     <div class="idx">${SLIDES.map((s,i)=>`<button class="${i?"":"on"}" data-slide="${i}" aria-label="Baneris ${i+1}: ${s.short}"><b>0${i+1}</b><span>${s.short}</span><i></i></button>`).join("")}</div>
   </div></section>
@@ -552,7 +552,7 @@ function pageHome(){ return `
       <div class="facts"><div><b>70+</b><span>ēdieni ēdienkartē</span></div><div><b>2</b><span>stāvi viesiem</span></div><div><b>6</b><span>dienas nedēļā</span></div></div></div>
   </div></section>
 
-  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="strip3">${pic("kafejnica-sans","Kafejnīca Jautrais Ods no sāniem")}${pic("lapene-sans","Lapene un terase")}${pic("darzs-taka","Dārzs un celiņš aiz kafejnīcas")}</div></section>
+  <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)"><div class="strip3">${pic("izkartne-jautrais-ods","Izkārtne Jautrais Ods uz kafejnīcas fasādes")}${pic("terase-galdins-ziedi","Galdiņš uz terases starp ziediem","","(max-width:760px) 50vw, 25vw")}${pic("lapene-galdins","Galdiņš lapenē dārzā","","(max-width:760px) 50vw, 25vw")}</div></section>
 
   <section class="inner" style="padding-bottom:clamp(72px,9vw,128px)">
     <div class="shead"><div><h2>Ēdienkarte</h2></div><a class="tlink" href="#edienkarte">Visa ēdienkarte ${ARR}</a></div>
@@ -604,14 +604,14 @@ function renderMenu(){ const q=norm(mQuery.trim()); const h=MENU.map(c=>catPanel
 
 function pageAbout(){ return `
   <section class="phead inner"><h1>Kafejnīca ar mājas sajūtu</h1><p class="lead">Neliela, mājīga kafejnīca Smiltenes novadā, Launkalnes pagastā, tieši pie Vidzemes šosejas.</p></section>
-  <section class="wrap">${pic("darzs-taka","Kafejnīcas dārzs","banner")}</section>
+  <section class="wrap">${pic("kafejnica-rudens-2","Kafejnīca Jautrais Ods rudenī","banner","100vw")}</section>
   <section class="sec inner"><div class="two">
     <h2>Gatavojam to, ko paši labprāt ēdam</h2>
     <div><p>Zupas, karbonādes, pankūkas un svaigi salāti. Ēdienkartē ir vairāk nekā 70 ēdienu, un daudziem ir arī mazā porcija, kas der bērniem vai vieglām pusdienām.</p>
      <p>Kafejnīcai ir divi stāvi: kamīnzāle pirmajā un mīkstas mēbeles otrajā. Siltajā sezonā strādā terase, bērniem ir šūpoles, un pie kafejnīcas var uzlādēt elektroauto.</p>
      <a class="tlink" href="#edienkarte">Skatīt ēdienkarti ${ARR}</a></div>
   </div></section>
-  <section class="inner"><div class="gallery">${pic("kafejnica-tuvu","Kafejnīca Jautrais Ods")}${pic("ieeja","Ieeja kafejnīcā")}${pic("lapene-sans","Terase")}${pic("klets","Vecā klēts pie autostāvvietas")}${pic("rati","Vecie rati pie ceļa")}</div></section>
+  <section class="inner"><div class="gallery">${pic("kafejnica-rudens-rati","Kafejnīca un vecie rati")}${pic("terase-aizkari","Terase ar aizkariem","","25vw")}${pic("klets-ritenis-ziedi","Vecās klēts ritenis un ziedi","","25vw")}${pic("veca-klets","Vecā guļbūves klēts","","25vw")}${pic("ev-uzlades-stacija","Elektroauto uzlādes stacija pie kafejnīcas","","25vw")}</div></section>
   <section class="sec inner"><div class="tiles">
     <div class="tile"><h3>Kamīnzāle</h3><p>Pirmajā stāvā.</p></div><div class="tile"><h3>Otrais stāvs</h3><p>Klusākai sarunai.</p></div><div class="tile"><h3>Terase</h3><p>Siltajā sezonā.</p></div>
     <div class="tile"><h3>Šūpoles</h3><p>Bērniem.</p></div><div class="tile"><h3>EV uzlāde</h3><p>Pie kafejnīcas.</p></div><div class="tile"><h3>Mazās porcijas</h3><p>Zupām un otrajiem.</p></div>
